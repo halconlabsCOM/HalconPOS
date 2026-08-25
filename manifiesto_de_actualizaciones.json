@@ -1,0 +1,25 @@
+{
+    "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
+    "latest_version": "1.0.16",
+    "min_version": "1.0.16",
+    "is_mandatory": true,
+    "release_date": "2026-08-25",
+    "release_notes": {
+        "es": "Primera versión publicada con actualización automática.\n\n• El teléfono ya administra empleados: alta, edición y baja.\n• Se corrigió un error que impedía guardar los Datos de Empresa cuando la fecha de fundación estaba vacía.\n• Pérdidas y Ganancias de Móvil ahora muestra Otros Ingresos, así sus números cierran.",
+        "en": "First release with automatic updates.\n\n• Employee management from the phone: create, edit and deactivate.\n• Fixed an error that prevented saving Company Data when the founding date was empty.\n• Mobile Profit & Loss now shows Other Income, so its figures reconcile."
+    },
+    "platforms": {
+        "android": {
+            "download_url": "",
+            "file_size_mb": 0,
+            "sha256": "",
+            "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
+            "_pendiente": "El APK no esta publicado todavia: falta la clave de firma de la aplicacion. La URL se deja VACIA a proposito — las tres pantallas de actualizacion tratan la cadena vacia como «no hay descarga para esta plataforma» y avisan; una URL que da 404 en cambio rompe a mitad de la bajada. Cuando el APK exista, poner aca la URL y su sha256."
+        },
+        "windows": {
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.16/HalconPOS-Setup-1.0.16.exe",
+            "file_size_mb": 37.1,
+            "sha256": "27602a017af50c48ef1df152ea3a02001215672b6f0c55aace9b6b8a1ee23b5f"
+        }
+    }
+}
