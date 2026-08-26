@@ -10,11 +10,25 @@
     },
     "platforms": {
         "android": {
-            "download_url": "",
-            "file_size_mb": 0,
-            "sha256": "",
+            "_por_que_abis": "El APK universal pesa 201.9 MB y de esos 112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.16/HalconPOS-1.0.16-universal.apk",
+            "file_size_mb": 201.9,
+            "sha256": "aeb32adc42f572865d6f9b28662e3d87cbd8d85db2ee712756f561b7f29b65c7",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
-            "_pendiente": "El APK no esta publicado todavia: falta la clave de firma de la aplicacion. La URL se deja VACIA a proposito — las tres pantallas de actualizacion tratan la cadena vacia como «no hay descarga para esta plataforma» y avisan; una URL que da 404 en cambio rompe a mitad de la bajada. Cuando el APK exista, poner aca la URL y su sha256."
+            "abis": {
+                "arm64-v8a": {
+                    "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.16/HalconPOS-1.0.16-arm64-v8a.apk",
+                    "file_size_mb": 90.4,
+                    "sha256": "d61d7bbf186b00786809453e063495e9c95a0b7b00a524eea7935c6ef00db694"
+                },
+                "armeabi-v7a": {
+                    "_para": "Equipos de 32 bits, mas viejos.",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.16/HalconPOS-1.0.16-armeabi-v7a.apk",
+                    "file_size_mb": 87.8,
+                    "sha256": "521c63b8eae2b1e0c26849be9a0761c773a99b2d74098fc28a9e77f07522714b"
+                }
+            }
         },
         "windows": {
             "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.16/HalconPOS-Setup-1.0.16.exe",
