@@ -1,46 +1,47 @@
 {
     "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
-    "latest_version": "1.0.18",
+    "latest_version": "1.0.19",
     "min_version": "1.0.16",
     "is_mandatory": false,
     "release_date": "2026-08-27",
-    "_por_que_min_version_no_sube": "1.0.18 es una versión de imagen: no corrige ningún cálculo ni ninguna pérdida de datos. Subir `min_version` el mismo día de publicar deja sin trabajar a todos los clientes si el instalador sale roto, y sin camino de vuelta. Se sube recién después de unos días de uso real.",
+    "_por_que_min_version_no_sube": "⛔ ACÁ NO SE PUEDE SUBIR, Y ES MÁS FUERTE QUE LA PRUDENCIA DE COSTUMBRE. En Android, 1.0.16, 1.0.17 y 1.0.18 NO PUEDEN instalar una actualización: les falta `REQUEST_INSTALL_PACKAGES` y el sistema se niega a abrir el instalador. Eso es justamente lo que corrige 1.0.19. Si `min_version` subiera, esos equipos encontrarían la pantalla bloqueante al arrancar y NO tendrían forma de salir de ella desde la aplicación: quedarían sin poder vender. La única salida es instalar el APK a mano una vez. Se sube recién cuando la mayoría esté en 1.0.19 o más.",
     "release_notes": {
-        "es": "HalconPOS ya tiene cara propia.\n\nHasta esta versión el ícono era el de la plantilla sobre la que se construyó el producto: un hexágono rojo con una P. Estaba en el escritorio, en el launcher de Android, en la pestaña del navegador y en el encabezado de todas las facturas. Ahora hay un halcón, y está en todos lados a la vez.\n\nLa pantalla de arranque ya no aletea: la anterior recortaba una foto en tres tiras y hacía girar dos de ellas, así que en cada giro la figura se partía, y encima seguía moviéndose después de terminar de cargar.\n\nEn la pantalla de ingreso ahora se ve un logo. Antes había uno, pero era negro sobre fondo oscuro: literalmente no se veía.\n\nLas facturas salen nítidas: el logo del encabezado pasó de 133x150 píxeles a 600x536.\n\nNo cambia nada del funcionamiento —ni ventas, ni stock, ni facturación, ni impresión—. Esta versión NO es obligatoria: si tenés 1.0.17 andando, podés quedarte donde estás.",
-        "en": "HalconPOS finally looks like itself.\n\nUntil this release the icon belonged to the template the product was built from: a red hexagon with a P. It was on the desktop, in the Android launcher, in the browser tab and on every invoice header. Now there is a falcon, everywhere at once.\n\nThe splash screen no longer flaps. The old one sliced a single photo into three strips and rotated two of them, so the figure tore apart on every beat — and it kept moving after loading had finished.\n\nThe sign-in screen now shows a logo. There was one before, but it was black on a dark background: it was literally invisible.\n\nInvoices print sharp: the header logo went from 133x150 pixels to 600x536.\n\nNothing about how the app works changed — not sales, stock, invoicing or printing. This release is NOT mandatory: if 1.0.17 works for you, keep it."
+        "es": "La actualización automática en Android ya puede terminar. Y el ícono de Windows ahora se dibuja.\n\n⚠️ Si tenés 1.0.18 o anterior en el teléfono, esta vez hay que instalar a mano: el defecto que se corrige está en el mecanismo que instala las actualizaciones, así que ese mismo mecanismo no puede traerte el arreglo. Bajá el APK del release e instalalo una vez; de ahí en adelante funciona solo.\n\nQué estaba roto: al APK le faltaba el permiso REQUEST_INSTALL_PACKAGES, y desde Android 8.0 sin él el sistema se niega a abrir el instalador. No estaba en 1.0.18, ni en 1.0.17, ni en 1.0.16.\n\nY no lo decía: esa negativa se descartaba en silencio y la pantalla se quedaba en «Verificando integridad del archivo...», que ni siquiera era cierto —el archivo ya estaba bajado y verificado—. Ahora, si algo falla, se ve el motivo.\n\nAdemás el teléfono se congelaba al verificar: el SHA256 cargaba el archivo entero en memoria y lo procesaba en el hilo de la pantalla. Ahora va por bloques y en segundo plano.\n\nEn Windows salía el logo de Flutter en el instalador y en el acceso directo: el archivo de íconos estaba en un formato que Windows sólo acepta en el tamaño más grande.\n\nNo cambia nada del funcionamiento. No es obligatoria, pero si usás la aplicación en el teléfono conviene: sin esto, ninguna actualización futura va a poder instalarse sola.",
+        "en": "Automatic updates on Android can finally finish. And the Windows icon now renders.\n\n⚠️ If your phone has 1.0.18 or earlier, this one needs a manual install: the defect being fixed lives in the mechanism that installs updates, so that same mechanism cannot deliver the fix. Download the APK from the release and install it once; from then on it works on its own.\n\nWhat was broken: the APK was missing the REQUEST_INSTALL_PACKAGES permission, and since Android 8.0 the system refuses to open the installer without it. It was missing in 1.0.18, 1.0.17 and 1.0.16 alike.\n\nAnd it never said so: that refusal was discarded silently and the screen sat on \"Verifying file integrity...\", which was not even true — the file was already downloaded and verified. Now, if something fails, you see why.\n\nThe phone also froze while verifying: the SHA256 loaded the whole file into memory and processed it on the UI thread. It now runs in chunks, in the background.\n\nOn Windows the Flutter logo showed up in the installer and the shortcut: the icon file was in a format Windows only accepts at the largest size.\n\nNothing about how the app works changed. Not mandatory, but worth it if you use the phone app: without this, no future update can install itself.",
+        "_android_no_puede_autoinstalar": "Quien esté en 1.0.18 o anterior tiene que instalar el APK a mano UNA vez. No es una preferencia: la vía automática es la que está rota."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 202.7 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-1.0.18-universal.apk",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.19/HalconPOS-1.0.19-universal.apk",
             "file_size_mb": 202.7,
-            "sha256": "390ea420caff07a9d78f48031c757f67ece5c3ebb78f7b5cdf21b2714a405171",
+            "sha256": "9114e5778df6582aeacb7230f4f4976860159d9fc3c8be7df8a7878a76b41cd9",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-1.0.18-arm64-v8a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.19/HalconPOS-1.0.19-arm64-v8a.apk",
                     "file_size_mb": 91.1,
-                    "sha256": "421c3a31a61beea571b646e0b91c0b9292c5282bf6ed7f2f7070aca28e0ec82f"
+                    "sha256": "9aa18c642b34b7bc052c9e19518ff228fe7d20201db437b96ceba0c50aaa1902"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-1.0.18-armeabi-v7a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.19/HalconPOS-1.0.19-armeabi-v7a.apk",
                     "file_size_mb": 88.6,
-                    "sha256": "2809b6b3612135fa64f48b254f1add7cfb0cf74e92b635b50f0ec7c73be8d030"
+                    "sha256": "4011dd036f3184678c3cdf9a3aa455213be37847fc5a2c4e7b873dfcb65dffd2"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-1.0.18-x86_64.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.19/HalconPOS-1.0.19-x86_64.apk",
                     "file_size_mb": 92.5,
-                    "sha256": "cb999bc60b10e765ae709108b164148e88cffbf5e8247f1e37837450878f88cc"
+                    "sha256": "2c8a37869cf4282a69a50af3163652dbedcab1b28e96a3c2a0f069a9bb42b5b6"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-Setup-1.0.18.exe",
-            "file_size_mb": 38.1,
-            "sha256": "a82673b517546fcc9453877c7043e8e2ff5a6da0e46a144e9716758db8c46102"
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.19/HalconPOS-Setup-1.0.19.exe",
+            "file_size_mb": 38.2,
+            "sha256": "f5688a8c45d721d2e057499a91bdf95329d68d79041480633974a0523d31bd72"
         }
     }
 }
