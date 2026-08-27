@@ -1,45 +1,46 @@
 {
     "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
-    "latest_version": "1.0.17",
+    "latest_version": "1.0.18",
     "min_version": "1.0.16",
     "is_mandatory": false,
-    "release_date": "2026-08-26",
+    "release_date": "2026-08-27",
+    "_por_que_min_version_no_sube": "1.0.18 es una versión de imagen: no corrige ningún cálculo ni ninguna pérdida de datos. Subir `min_version` el mismo día de publicar deja sin trabajar a todos los clientes si el instalador sale roto, y sin camino de vuelta. Se sube recién después de unos días de uso real.",
     "release_notes": {
-        "es": "La aplicación ya se presenta como HalconPOS en Android.\n\nAntes mostraba el nombre de la plantilla sobre la que se construyó el producto: aparecía debajo del ícono y en cada pedido de permiso del sistema.\n\nEsta versión NO es obligatoria: si tenés 1.0.16 andando, seguí con ella. Las correcciones del registro de cuentas son del servidor y ya están activas sin actualizar.",
-        "en": "The app now identifies itself as HalconPOS on Android.\n\nIt used to show the name of the template the product was built from — under the icon and in every system permission prompt.\n\nThis release is NOT mandatory: if 1.0.16 works for you, keep it. The account signup fixes are server-side and already live without updating."
+        "es": "HalconPOS ya tiene cara propia.\n\nHasta esta versión el ícono era el de la plantilla sobre la que se construyó el producto: un hexágono rojo con una P. Estaba en el escritorio, en el launcher de Android, en la pestaña del navegador y en el encabezado de todas las facturas. Ahora hay un halcón, y está en todos lados a la vez.\n\nLa pantalla de arranque ya no aletea: la anterior recortaba una foto en tres tiras y hacía girar dos de ellas, así que en cada giro la figura se partía, y encima seguía moviéndose después de terminar de cargar.\n\nEn la pantalla de ingreso ahora se ve un logo. Antes había uno, pero era negro sobre fondo oscuro: literalmente no se veía.\n\nLas facturas salen nítidas: el logo del encabezado pasó de 133x150 píxeles a 600x536.\n\nNo cambia nada del funcionamiento —ni ventas, ni stock, ni facturación, ni impresión—. Esta versión NO es obligatoria: si tenés 1.0.17 andando, podés quedarte donde estás.",
+        "en": "HalconPOS finally looks like itself.\n\nUntil this release the icon belonged to the template the product was built from: a red hexagon with a P. It was on the desktop, in the Android launcher, in the browser tab and on every invoice header. Now there is a falcon, everywhere at once.\n\nThe splash screen no longer flaps. The old one sliced a single photo into three strips and rotated two of them, so the figure tore apart on every beat — and it kept moving after loading had finished.\n\nThe sign-in screen now shows a logo. There was one before, but it was black on a dark background: it was literally invisible.\n\nInvoices print sharp: the header logo went from 133x150 pixels to 600x536.\n\nNothing about how the app works changed — not sales, stock, invoicing or printing. This release is NOT mandatory: if 1.0.17 works for you, keep it."
     },
     "platforms": {
         "android": {
-            "_por_que_abis": "El APK universal pesa 201.9 MB y de esos 112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.17/HalconPOS-1.0.17-universal.apk",
-            "file_size_mb": 201.9,
-            "sha256": "cdd6d9ba024fd8f3a81ca79d1af74d01b4b856f008e3cebd18387e7ad6c1e3d5",
+            "_por_que_abis": "El APK universal pesa 202.7 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-1.0.18-universal.apk",
+            "file_size_mb": 202.7,
+            "sha256": "390ea420caff07a9d78f48031c757f67ece5c3ebb78f7b5cdf21b2714a405171",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.17/HalconPOS-1.0.17-arm64-v8a.apk",
-                    "file_size_mb": 90.4,
-                    "sha256": "d9aaf9b9761ffade3b6f0514d87a8c37decf22838c0ca526045d2cb083998906"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-1.0.18-arm64-v8a.apk",
+                    "file_size_mb": 91.1,
+                    "sha256": "421c3a31a61beea571b646e0b91c0b9292c5282bf6ed7f2f7070aca28e0ec82f"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.17/HalconPOS-1.0.17-armeabi-v7a.apk",
-                    "file_size_mb": 87.8,
-                    "sha256": "7c77da25e738fc564f26613f9a0e32d0c64997b9509d3b4bc1625a3616d38a43"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-1.0.18-armeabi-v7a.apk",
+                    "file_size_mb": 88.6,
+                    "sha256": "2809b6b3612135fa64f48b254f1add7cfb0cf74e92b635b50f0ec7c73be8d030"
                 },
                 "x86_64": {
-                    "_para": "Emuladores de Android en PC. NUEVO en 1.0.17: antes habia que bajar el universal de 202 MB para probar en un emulador.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.17/HalconPOS-1.0.17-x86_64.apk",
-                    "file_size_mb": 91.7,
-                    "sha256": "7e098b74ef9350eab51859edb6b3171457661a073121dae9e86a62603e63a28c"
+                    "_para": "Emuladores de Android en PC.",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-1.0.18-x86_64.apk",
+                    "file_size_mb": 92.5,
+                    "sha256": "cb999bc60b10e765ae709108b164148e88cffbf5e8247f1e37837450878f88cc"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.17/HalconPOS-Setup-1.0.17.exe",
-            "file_size_mb": 37.1,
-            "sha256": "e4b3e2b1e0ca3bbc332914fa89ce0a19c3f9eba2c071ef0c0efd0e537ed03474"
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.18/HalconPOS-Setup-1.0.18.exe",
+            "file_size_mb": 38.1,
+            "sha256": "a82673b517546fcc9453877c7043e8e2ff5a6da0e46a144e9716758db8c46102"
         }
     }
 }
