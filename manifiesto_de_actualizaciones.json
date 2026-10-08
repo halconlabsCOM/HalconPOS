@@ -1,47 +1,47 @@
 {
     "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
-    "latest_version": "1.0.26",
-    "min_version": "1.0.25",
+    "latest_version": "1.0.27",
+    "min_version": "1.0.26",
     "is_mandatory": true,
     "release_date": "2026-10-08",
     "release_notes": {
-        "es": "Cierre de dos auditorias completas -la de la API v2 y la del frontend- con los arreglos que tocan los numeros del comercio: la venta de un combo ahora descuenta el stock de sus componentes; el vuelto ya no se restaba dos veces del saldo del cliente (dejaba una deuda fantasma igual al vuelto, que la devolucion cobraba en vez de devolver efectivo); las metricas del dia se calculan en unidades; y los cargos al personal se pueden aprobar o condonar, con su cuenta contable. La sesion, la configuracion y las preferencias pasaron a un motor unico, igual en PC y en Android. En el servidor, el esquema de las tres bases quedo alineado con la plantilla y se corrigio un defecto que impedia dar de alta un comercio nuevo. Se recomienda actualizar: una version anterior escribiendo contra el esquema nuevo puede dejar numeros mal.",
-        "en": "Two full audits closed -API v2 and the frontend- with the fixes that affect the shop's numbers: selling a combo now draws down its components' stock; change given is no longer subtracted twice from the customer's balance (it left a phantom debt equal to the change); daily metrics are computed in units; and staff charges can be approved or forgiven, with their ledger account. Session, configuration and preferences now share a single engine on both Windows and Android. On the server, all three databases were aligned with the template and a defect that prevented provisioning a new shop was fixed. Updating is recommended: an older version writing against the new schema can leave numbers wrong.",
+        "es": "Arregla un defecto que rompia las COMPRAS en produccion: `row_number` es palabra reservada en MariaDB 11 -la version del servidor- y no en la del equipo de desarrollo, asi que el alta de los renglones de una compra devolvia 500 y la operacion no se podia completar. La columna pasa a llamarse `line_number` en los renglones de venta y de compra, y `condition` pasa a `item_condition` por el mismo motivo; las dos se renombran sin perder datos. Tambien: el catalogo de productos y el selector de compras de Movil rediseñados, y el boton atras del telefono vuelve a Inicio desde las pestañas en vez de salir de la aplicacion. Actualizacion recomendada para quien trabaje con compras.",
+        "en": "Fixes a defect that broke PURCHASES in production: `row_number` is a reserved word in MariaDB 11 -the server's version- but not in the development machine's, so inserting a purchase's line items returned 500 and the operation could not be completed. The column is renamed to `line_number` on sale and purchase line items, and `condition` to `item_condition` for the same reason; both are renamed without data loss. Also: redesigned product catalogue and purchase picker on mobile, and the phone's back button now returns to Home from the tabs instead of leaving the app. Updating is recommended for anyone working with purchases.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-1.0.26-universal.apk",
-            "file_size_mb": 204.7,
-            "sha256": "87763b7b1007fac6bf24964c8bcf1745b4360b34e3298802a61f9e09e6dcadda",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.27/HalconPOS-1.0.27-universal.apk",
+            "file_size_mb": 204.8,
+            "sha256": "734cbd686859fdf0db5907d8b715e7a50b3e4b735538a194117bcd7232db079e",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-1.0.26-arm64-v8a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.27/HalconPOS-1.0.27-arm64-v8a.apk",
                     "file_size_mb": 91.8,
-                    "sha256": "1077b35dd16857c2eb8a5a5b025c0c2e6c966882806d78d1723d10f350e0f87d"
+                    "sha256": "937a814baf4efdbc8ea79e4b7802fb6ce91dc30d7c1d0bfb00c680f28859a7e7"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-1.0.26-armeabi-v7a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.27/HalconPOS-1.0.27-armeabi-v7a.apk",
                     "file_size_mb": 89.3,
-                    "sha256": "3ebab99fc2bde6771f24b3667b0dab6fbf99aa65ba521eca00bc0a70650d7699"
+                    "sha256": "c1d90ee654fea30dadc3eb8b40fd8c2414136128c3ad6778ea5c0637bac3da00"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-1.0.26-x86_64.apk",
-                    "file_size_mb": 93.1,
-                    "sha256": "9b02f7e885e8d7ab23ba56d33a1f0fc9c391cc6c9c9cad0732e445c2d195cbeb"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.27/HalconPOS-1.0.27-x86_64.apk",
+                    "file_size_mb": 93.2,
+                    "sha256": "3006c6ef8e2fcabd3acbf35bf94dda6e8796a364fc1e6d6d946bc7ad5d379834"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-Setup-1.0.26.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.27/HalconPOS-Setup-1.0.27.exe",
             "file_size_mb": 38.2,
-            "sha256": "824a3baeac570ab5f0026ad0865f6f3762df290c775827be709a399641abb2cb"
+            "sha256": "a47a42369be6b9ec5b766cc492badb2a6fc73150ee71b63bc17b91e66f80d4f1"
         }
     },
-    "_por_que_min_version_sube_ahora": "min_version sube a 1.0.25 (no a 1.0.26) por decision del dueno el 08/10/2026. Lo que obliga a sacar de circulacion lo anterior a 1.0.25 son los arreglos de datos de esta tanda -el vuelto que restaba dos veces el saldo, el combo que no consumia componentes, las metricas diarias en unidades-: una version con esos defectos escribiendo contra el esquema nuevo deja numeros mal. Se deja una version de colchon y no dos por lo que dice COMO_PUBLICAR_UNA_VERSION.md: si el instalador publicado saliera roto, min_version igual a latest deja a todos los clientes sin camino de vuelta."
+    "_por_que_min_version_sube_ahora": "min_version sube a 1.0.26 por decision del dueno el 08/10/2026. Lo que obliga a sacar de circulacion lo anterior es que 1.0.26 y las previas no pueden dar de alta una compra contra el esquema nuevo: nombran la columna por su nombre viejo (`row_number`), que ya no existe. Se deja una version de colchon y no se iguala a latest por lo que dice COMO_PUBLICAR_UNA_VERSION.md: si el instalador publicado saliera roto, min_version igual a latest deja a todos los clientes sin camino de vuelta."
 }
