@@ -1,47 +1,47 @@
 {
     "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
-    "latest_version": "1.0.25",
-    "min_version": "1.0.24",
+    "latest_version": "1.0.26",
+    "min_version": "1.0.25",
     "is_mandatory": true,
-    "release_date": "2026-09-30",
+    "release_date": "2026-10-08",
     "release_notes": {
-        "es": "La API v1 se retiró del servidor. Esta versión habla sólo con la API v2, que quedó completamente independiente.\n\nQUÉ CAMBIÓ EN EL SERVIDOR. La API v2 —226 archivos, reescrita con arquitectura orientada a objetos— dejó de compartir un solo archivo, clase o motor con la anterior. La v1 salió del árbol servido y quedó guardada comprimida; /api/v1/ ahora contesta 410.\n\nPor eso esta versión es obligatoria: las anteriores a 1.0.24 le hablan a una API que ya no está.\n\nCORRECCIONES DE SEGURIDAD. El acceso total de la cuenta —«el suscriptor no puede quedar afuera de su propio sistema»— se decidía por dos datos que el propio usuario podía escribir desde la aplicación: que su rol se llamara «owner» y que su correo figurara en la tabla del sistema. Medido con la batería de paridad: un usuario con rol Admin se puso ese nombre de rol y ese correo, y su sesión siguiente fue dueña de la cuenta. Ahora el acceso total lo da una sola columna que escribe el alta de comercios y que la API del comercio nunca toca.\n\nEN LA BASE. Las bases de los comercios recuperaron seis claves foráneas de la parte fiscal por país que existían en la plantilla desde agosto pero que las bases ya creadas nunca habían recibido. No cambian nada de lo que se ve: impiden que queden referencias sueltas a un país o a un grupo de impuestos que ya no existe.\n\nCORRECCIONES DE LA APLICACIÓN. El cobro rápido ya no queda tapado por el teclado. El ingreso y el cierre de sesión se alinearon con la API nueva. Y se corrigieron los informes de caja, impuestos y estado de resultados para que no cuenten ventas ni compras anuladas, junto con la devolución a proveedor, que ahora aplica la cascada correcta —primero la deuda— y sólo rechaza si lo que vuelve como dinero supera lo que se había pagado.\n\n\n\nVerificado antes de publicar:\n\n1. Los cinco binarios contienen https://api.halconpos.com dentro de libapp.so / app.so.\n2. Los cuatro APK están firmados con la MISMA llave que 1.0.21 a 1.0.24 — certificado SHA-256 9ce752a461cd7ecaed68eca5910bdc91a56d4c52a2c8ef7c0366cf5580f1b851.\n3. Las cinco descargas contestan HTTP 200 y sus sha256 coinciden con el manifiesto.\n",
-        "en": "API v1 was retired from the server. This version talks ONLY to API v2, now fully independent: 226 files, rebuilt with an object-oriented architecture, sharing no file, class or engine with the old one. v1 left the served tree and is kept compressed; /api/v1/ now answers 410. That is why this version is MANDATORY: anything before 1.0.24 talks to an API that is no longer there.\n\nSECURITY. Full account access -the subscriber cannot be locked out of their own system- used to be decided by two values the user could write from the app: a role named \"owner\" and an email listed in the system table. Measured with the parity battery: an Admin set that role name and that email, and their next session owned the account. Full access is now granted by a single column written by tenant creation, which the tenant API never touches.\n\nDATABASE. Tenant databases regained six fiscal foreign keys that had been in the template since August but were never applied to already-created databases. Nothing visible changes: they prevent dangling references to a country or tax group that no longer exists.\n\nAPP FIXES. Quick payment is no longer covered by the keyboard. Sign-in and sign-out were aligned with the new API. Cash, tax and income-statement reports no longer count voided sales or purchases, and supplier returns now apply the correct cascade -debt first- rejecting only when the money returned exceeds what was paid.",
+        "es": "Cierre de dos auditorias completas -la de la API v2 y la del frontend- con los arreglos que tocan los numeros del comercio: la venta de un combo ahora descuenta el stock de sus componentes; el vuelto ya no se restaba dos veces del saldo del cliente (dejaba una deuda fantasma igual al vuelto, que la devolucion cobraba en vez de devolver efectivo); las metricas del dia se calculan en unidades; y los cargos al personal se pueden aprobar o condonar, con su cuenta contable. La sesion, la configuracion y las preferencias pasaron a un motor unico, igual en PC y en Android. En el servidor, el esquema de las tres bases quedo alineado con la plantilla y se corrigio un defecto que impedia dar de alta un comercio nuevo. Se recomienda actualizar: una version anterior escribiendo contra el esquema nuevo puede dejar numeros mal.",
+        "en": "Two full audits closed -API v2 and the frontend- with the fixes that affect the shop's numbers: selling a combo now draws down its components' stock; change given is no longer subtracted twice from the customer's balance (it left a phantom debt equal to the change); daily metrics are computed in units; and staff charges can be approved or forgiven, with their ledger account. Session, configuration and preferences now share a single engine on both Windows and Android. On the server, all three databases were aligned with the template and a defect that prevented provisioning a new shop was fixed. Updating is recommended: an older version writing against the new schema can leave numbers wrong.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.25/HalconPOS-1.0.25-universal.apk",
-            "file_size_mb": 204.4,
-            "sha256": "7307dcc0ae51a5df25cadb777d5b3c712d3e7248a75990699bdfbcd3925a658f",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-1.0.26-universal.apk",
+            "file_size_mb": 204.7,
+            "sha256": "87763b7b1007fac6bf24964c8bcf1745b4360b34e3298802a61f9e09e6dcadda",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.25/HalconPOS-1.0.25-arm64-v8a.apk",
-                    "file_size_mb": 91.6,
-                    "sha256": "3f16ac93518884c0d4ca283d94b9efe4825574e27ba87d264a48bcbd58e83cb1"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-1.0.26-arm64-v8a.apk",
+                    "file_size_mb": 91.8,
+                    "sha256": "1077b35dd16857c2eb8a5a5b025c0c2e6c966882806d78d1723d10f350e0f87d"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.25/HalconPOS-1.0.25-armeabi-v7a.apk",
-                    "file_size_mb": 89.2,
-                    "sha256": "8906b011a3f86b611fc76cf16994540ff2216098e9b5fb415725d150e6d084b7"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-1.0.26-armeabi-v7a.apk",
+                    "file_size_mb": 89.3,
+                    "sha256": "3ebab99fc2bde6771f24b3667b0dab6fbf99aa65ba521eca00bc0a70650d7699"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.25/HalconPOS-1.0.25-x86_64.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-1.0.26-x86_64.apk",
                     "file_size_mb": 93.1,
-                    "sha256": "ccb6e1145f66258b45ad2aa412ff8206eef26fc7c17099fe960302f5976caf8e"
+                    "sha256": "9b02f7e885e8d7ab23ba56d33a1f0fc9c391cc6c9c9cad0732e445c2d195cbeb"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.25/HalconPOS-Setup-1.0.25.exe",
-            "file_size_mb": 38.1,
-            "sha256": "799bbfec756db8d92e68a3ccfab78fc7d222b40d5ceea3113fa7c8c8b0af5ee7"
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.26/HalconPOS-Setup-1.0.26.exe",
+            "file_size_mb": 38.2,
+            "sha256": "824a3baeac570ab5f0026ad0865f6f3762df290c775827be709a399641abb2cb"
         }
     },
-    "_por_que_min_version_sube_ahora": "min_version queda en 1.0.24 -no en 1.0.25- y es deliberado. El 30/09/2026 se retiro la API v1 del servidor: las versiones anteriores a 1.0.24 le hablan a una API que ya no existe y quedan bloqueadas, que es lo que se busca. 1.0.24 SI habla con v2, asi que quien este ahi sigue trabajando y tiene camino de vuelta si 1.0.25 tuviera un problema. Verificado antes de publicar: (1) los cinco binarios contienen https://api.halconpos.com dentro de libapp.so / app.so -el universal en sus tres-; (2) los cuatro APK firmados con la MISMA llave que 1.0.21-1.0.24, certificado 9ce752a461cd7ecaed68eca5910bdc91a56d4c52a2c8ef7c0366cf5580f1b851; (3) las cinco descargas en HTTP 200 con sus sha256 coincidiendo."
+    "_por_que_min_version_sube_ahora": "min_version sube a 1.0.25 (no a 1.0.26) por decision del dueno el 08/10/2026. Lo que obliga a sacar de circulacion lo anterior a 1.0.25 son los arreglos de datos de esta tanda -el vuelto que restaba dos veces el saldo, el combo que no consumia componentes, las metricas diarias en unidades-: una version con esos defectos escribiendo contra el esquema nuevo deja numeros mal. Se deja una version de colchon y no dos por lo que dice COMO_PUBLICAR_UNA_VERSION.md: si el instalador publicado saliera roto, min_version igual a latest deja a todos los clientes sin camino de vuelta."
 }
