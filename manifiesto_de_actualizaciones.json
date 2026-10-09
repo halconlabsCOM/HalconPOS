@@ -1,47 +1,47 @@
 {
     "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
-    "latest_version": "1.0.28",
-    "min_version": "1.0.27",
+    "latest_version": "1.0.29",
+    "min_version": "1.0.28",
     "is_mandatory": true,
     "release_date": "2026-10-08",
     "release_notes": {
-        "es": "Dos arreglos que se notan al usar la aplicacion, y Venta Rapida de Movil rehecha. 1) El tipo de comprobante ya no se inventa: si una venta no encontraba su tipo en el catalogo, salia como «FACTURA» y los comprobantes A4 y de 80 mm la trataban como fiscal por el nombre; la via SQL directo inventaba otro tipo distinto para el mismo caso. Ahora se usa lo que dice el catalogo, y nada mas. 2) La invitacion a un empleado ya sirve: faltaba guardar el comercio en el equipo al aceptar el enlace, asi que el empleado aceptaba y despues no podia entrar. 3) En Movil, Venta Rapida rehecha con buscador de productos y cobro con pagos combinados, y la lista de ventas rediseñada, las dos sobre mockups aprobados. Tambien se reviso el dialogo de conexion a la base.",
-        "en": "Two fixes you notice in daily use, plus a rebuilt Quick Sale on mobile. 1) The invoice type is no longer made up: when a sale could not find its type in the catalogue it came out as \"FACTURA\" and the A4 and 80 mm receipts treated it as fiscal because of that name; the direct-SQL path invented a different type for the same case. Now only what the catalogue says is used. 2) Employee invitations work: accepting the link never stored the shop on the device, so the employee accepted and then could not sign in. 3) On mobile, Quick Sale was rebuilt with a product search and combined-payment checkout, and the sales list was redesigned, both from approved mockups. The database connection dialog was also revised.",
+        "es": "Arqueo de caja: un arreglo de plata y el informe rehecho. La CUENTA CORRIENTE se contaba como «Total Tarjeta/Virtual» en el PDF del arqueo, y es deuda, no dinero cobrado: medido en una caja de prueba, 405,00 de cuenta corriente sumados como tarjeta cuando lo virtual real era 637,80. El resumen del servidor ya la excluia; el informe no. Ahora cada renglon del arqueo trae, por movimiento, lo cobrado por CADA medio de pago, si es la venta o un cobro de saldo posterior, las fechas, el comprobante y el cliente — asi los totales se pueden rehacer a mano. El informe A4 y el ticket de 80 mm quedaron rediseñados sobre mockups aprobados. El arreglo del calculo esta en el servidor, asi que las instalaciones que todavia no actualizaron ya ven el numero correcto; lo que trae esta version es el informe nuevo.",
+        "en": "Cash register close-out: a money fix and a rebuilt report. CURRENT ACCOUNT balances were counted as \"card/virtual total\" in the close-out PDF, and that is debt, not money taken: measured on a test register, 405.00 of current account added as card when the real virtual total was 637.80. The server's summary already excluded it; the report did not. Each close-out line now carries, per movement, what was taken by EACH payment method, whether it is the sale or a later balance collection, the dates, the invoice and the customer — so the totals can be re-added by hand. The A4 report and the 80 mm ticket were redesigned from approved mockups. The calculation fix lives on the server, so installations that have not updated yet already see the right number; what this version adds is the new report.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.28/HalconPOS-1.0.28-universal.apk",
-            "file_size_mb": 205.1,
-            "sha256": "efea0e83772729de11baeb69b55e0829a541fa5d637567496c8f0479b9ed847b",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.29/HalconPOS-1.0.29-universal.apk",
+            "file_size_mb": 205.4,
+            "sha256": "83108b3c741cb7b7a0b9c70f224fd78056d7f9db093bc8324f22aec9387d28f6",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.28/HalconPOS-1.0.28-arm64-v8a.apk",
-                    "file_size_mb": 91.8,
-                    "sha256": "eec0ddc1da48af98afd517cec2261636e741451ccee8641d8118dd1827964c4a"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.29/HalconPOS-1.0.29-arm64-v8a.apk",
+                    "file_size_mb": 91.9,
+                    "sha256": "69d5f01dde17a48e2be682985fd746f19ff72bbca657638414ab9b93ee7a2d71"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.28/HalconPOS-1.0.28-armeabi-v7a.apk",
-                    "file_size_mb": 89.4,
-                    "sha256": "149f1341ab147612c38566369a89f8e8db715609fb9ea1965261af495116b99d"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.29/HalconPOS-1.0.29-armeabi-v7a.apk",
+                    "file_size_mb": 89.5,
+                    "sha256": "1b46a81c4b3c33a69e647046f6184f5c11c05fccd163910838ad08f169664a07"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.28/HalconPOS-1.0.28-x86_64.apk",
-                    "file_size_mb": 93.3,
-                    "sha256": "0de8ffeded18657c807ab92317c141c50dee9901aaf302f4d675e816e5c0736e"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.29/HalconPOS-1.0.29-x86_64.apk",
+                    "file_size_mb": 93.4,
+                    "sha256": "fce7524c4bba24af3a39b7e7cb8af60ba3c335e3a6261bb95ad074ca6de05ada"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.28/HalconPOS-Setup-1.0.28.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.29/HalconPOS-Setup-1.0.29.exe",
             "file_size_mb": 38.3,
-            "sha256": "49572ae3fd8da359c47e023cbd3d59db5f4146826e6bdd01e51dd8ca0b3b17ac"
+            "sha256": "d5fc9669232bb2ecaf64a9101811e86f3d5dbf58b9607d07a314f27c9aeadde3"
         }
     },
-    "_por_que_min_version_sube_ahora": "min_version sube a 1.0.27 por decision del dueno el 08/10/2026, dejando una version de colchon. Se midio antes de publicar que una version anterior NO se rompe con la API nueva: el tipo de comprobante solo vuelve nulo si el catalogo no tiene la fila, y en los comercios de produccion hay cero ventas en ese caso y cero que usen un codigo de autoridad de texto. Lo que si justifica sacar de circulacion lo viejo es que esas versiones imprimen un comprobante como fiscal deduciendolo del nombre del tipo."
+    "_por_que_min_version_sube_ahora": "min_version sube a 1.0.28 por decision del dueno el 08/10/2026, dejando una version de colchon. El arreglo del calculo del arqueo viaja en el SERVIDOR y le llega a cualquier version instalada sin actualizar, asi que una version anterior no muestra un numero mal; lo que se pierde es el informe rediseñado y el desglose por medio de pago. Antes de publicar se corrio la suite del proyecto: 1552 pruebas pasando y los dos rojos verificados uno por uno como falsos positivos de centinelas con el alcance demasiado ancho (uno mira un archivo de prueba que no se despliega, el otro no reconoce las guardas de carga y error que el codigo si tiene)."
 }
