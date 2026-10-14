@@ -1,47 +1,47 @@
 {
     "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
-    "latest_version": "1.0.31",
+    "latest_version": "1.0.32",
     "min_version": "1.0.29",
     "is_mandatory": true,
-    "release_date": "2026-10-13",
+    "release_date": "2026-10-14",
     "release_notes": {
-        "es": "Arregla un defecto de stock al borrar una compra, y cierra la campana de pruebas completa por las tres vias. 1) BORRAR UNA COMPRA ya no deja el stock mal: por la via SQL directo, una compra con devoluciones, con pagos posteriores, con numeros de serie que ya no estan o sin stock suficiente quedaba BORRADA y el stock sin descontar, con el asiento contable y la salida de plata todavia vivos. Ahora se rechaza con el motivo, igual que por la API, y cuando si corresponde borrarla revierte los asientos y da de baja su caja. 2) Las notas del movimiento de stock nombran la compra (Ingreso / Actualizacion / Eliminacion / Devolucion Compra #id), asi se puede seguir cada movimiento hasta su documento. 3) RR.HH.: un empleado sin sucursal asignada ya no genera su dia en la sucursal 1, que hacia que el informe de horas lo partiera en dos filas. 4) Adentro: pantallas grandes partidas en archivos (mismo comportamiento, nada cambia en la pantalla) y 252 colores sueltos pasados a los tokens del tema. La campana final cerro con las tres vias en verde -PC por API 129, PC por SQL 126, Movil 122- y cero diferencias de dinero y de stock contra el contador.",
-        "en": "Fixes a stock defect when deleting a purchase, and closes the full test campaign across all three paths. 1) DELETING A PURCHASE no longer leaves stock wrong: on the direct-SQL path, a purchase with returns, with later payments, with serial numbers no longer present, or without enough stock was DELETED and the stock never deducted, with the ledger entry and the cash outflow still live. It is now rejected with the reason, just like through the API, and when deletion is in order it reverses the entries and closes its register. 2) Stock movement notes now name the purchase (Ingreso / Actualizacion / Eliminacion / Devolucion Compra #id), so every movement can be traced to its document. 3) HR: an employee with no branch assigned no longer gets their day on branch 1, which split the hours report into two rows. 4) Inside: large screens split into files (same behaviour, nothing changes on screen) and 252 loose colours moved to theme tokens. The final campaign closed green on all three paths -PC via API 129, PC via SQL 126, mobile 122- with zero money and stock differences against the independent counter.",
+        "es": "Recuperar la contrasena ahora funciona y no deja a nadie encerrado. 1) EL CODIGO LLEGA: el servidor buscaba al dueno por coincidencia de texto con el correo de adentro del comercio y, si no coincidia, no mandaba nada ni avisaba. Ahora busca al dueno por su cuenta de la plataforma y le manda el codigo a ese correo. Recuperar es para el dueno de la cuenta; a un empleado le cambia la contrasena el administrador desde Usuarios, y la pantalla lo dice. 2) LA PANTALLA DEL CODIGO TIENE SALIDA: en PC no habia forma de volver si el codigo no llegaba. Ahora dice a que correo se mando y cuanto vale, que hacer si no llega, y ofrece Reenviar (con espera de 2 minutos), Cambiar correo y Volver al inicio de sesion. 3) En el celular, Reenviar usaba el reenvio del alta y nunca mandaba un codigo de recuperacion: corregido. 4) Si el dueno cambia su correo desde Usuarios, se actualiza tambien su cuenta de la plataforma, asi el ingreso y la recuperacion siguen funcionando.",
+        "en": "Password recovery now works and never leaves anyone stuck. 1) THE CODE ARRIVES: the server looked up the owner by matching the email text inside the business and, if it did not match, sent nothing and said nothing. It now finds the owner through their platform account and sends the code to that address. Recovery is for the account owner; an employee's password is changed by the administrator from Users, and the screen says so. 2) THE CODE SCREEN HAS A WAY OUT: on PC there was no way back if the code did not arrive. It now shows where the code was sent and how long it is valid, what to do if it does not arrive, and offers Resend (2-minute wait), Change email and Back to sign in. 3) On mobile, Resend used the sign-up resend and never sent a recovery code: fixed. 4) If the owner changes their email from Users, their platform account is updated too, so sign-in and recovery keep working.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.31/HalconPOS-1.0.31-universal.apk",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-1.0.32-universal.apk",
             "file_size_mb": 207.3,
-            "sha256": "17e037e971747e6152debeebf97ef72856d6fae7d6e6c38af379d91e7331c2a3",
+            "sha256": "1a828792eff2a51f27ea1c754a9536c00c2d99be19ab2e7b501e45b6978a322d",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.31/HalconPOS-1.0.31-arm64-v8a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-1.0.32-arm64-v8a.apk",
                     "file_size_mb": 92.6,
-                    "sha256": "2cfb6a24e49763d64571285ac12b8b8657d38d4eba7020f36a2841e9abe52208"
+                    "sha256": "c551b3d84d7a7811b42c3a3589202a728a7296be10316bac9a77dc4a247b94d3"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.31/HalconPOS-1.0.31-armeabi-v7a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-1.0.32-armeabi-v7a.apk",
                     "file_size_mb": 90.2,
-                    "sha256": "43855516596afe914e825e018d3b1251d7e0181c3af2215d2dfad58895ea15ac"
+                    "sha256": "b6e92c0faceed253059f5c80d01fb6cbc0b00247688a82d3d82324a24907518a"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.31/HalconPOS-1.0.31-x86_64.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-1.0.32-x86_64.apk",
                     "file_size_mb": 93.9,
-                    "sha256": "fe9aed1139959c3074badf400fe50956d509e23fbbf668d3cae92b601c98e3b0"
+                    "sha256": "14ed72a6665b0b01bd7713ff5463c281b87826794f3b00d94d93aa24cf449559"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.31/HalconPOS-Setup-1.0.31.exe",
-            "file_size_mb": 38.6,
-            "sha256": "ad7759da01f4cc5d0dcbc4c5e65a2aaad2de9080350a984a8e4b0e81d0a6e809"
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-Setup-1.0.32.exe",
+            "file_size_mb": 38.5,
+            "sha256": "37b65fa00dcd86e8dcfa4fbf358165c9c47c41b3754b54a88e165cbc650fb8a8"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 y 1.0.31. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
