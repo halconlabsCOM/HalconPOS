@@ -1,47 +1,47 @@
 {
     "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
-    "latest_version": "1.0.33",
+    "latest_version": "1.0.34",
     "min_version": "1.0.29",
     "is_mandatory": true,
     "release_date": "2026-10-14",
     "release_notes": {
-        "es": "El cajero vuelve a poder vender y el comercio queda guardado en el equipo. 1) VENTA SIN BLOQUEOS: si falta el cliente o el impuesto por defecto, la venta toma el primero de la base y se puede cambiar antes de cobrar; la venta rapida ya no dice que no hay clientes. 2) CONFIGURACION -> VENTAS: nueva seccion para elegir el impuesto y el cliente por defecto del comercio (valen en todos los equipos). 3) CAJERO: ve su caja abierta (antes veia caja cerrada) y puede cobrar con el impuesto por defecto. 4) CERRAR SESION YA NO BORRA EL COMERCIO: el ingreso muestra Comercio: X con Cambiar, y si el correo es de otro comercio lo avisa y ofrece cambiarlo. 5) DATOS DE SUSCRIPCION (antes Suscribirse ahora): muestra el identificador del comercio con boton Copiar.",
-        "en": "Cashiers can sell again and the business stays saved on the device. 1) NO BLOCKED SALES: if the default customer or tax is missing, the sale takes the first one in the database and it can be changed before charging; quick sale no longer says there are no customers. 2) SETTINGS -> SALES: new section to choose the business default tax and customer (they apply on every device). 3) CASHIER: sees their open register (it used to show closed) and can charge with the default tax. 4) SIGNING OUT NO LONGER FORGETS THE BUSINESS: sign-in shows Business: X with Change, and if the email belongs to another business it says so and offers to switch. 5) SUBSCRIPTION DETAILS (formerly Subscribe now): shows the business ID with a Copy button.",
+        "es": "El cajero ya puede abrir su caja y guardar permisos no da error. 1) CAJA DEL CAJERO: quien vende puede ver, abrir y cerrar SU caja (antes no tenia permiso y sin caja no podia vender); cerrar la caja de otro sigue siendo del supervisor. 2) SUCURSAL AL ABRIR CAJA: el administrador elige la sucursal en un desplegable; el cajero ve la suya bloqueada. 3) PERMISOS: guardar los permisos de un usuario cuyo rol comparten otros ya no da error; ese usuario pasa a un rol propio (por ejemplo Cashier - valeria) y la app lo avisa antes de guardar. 4) GENERADOR DE CODIGOS DE BARRAS (celular): busca por nombre o codigo y deja elegir productos sin stock. 5) Abrir caja con el monto vacio ahora pide el monto en vez de decir que no puede ser negativo.",
+        "en": "Cashiers can open their register and saving permissions no longer fails. 1) CASHIER REGISTER: whoever sells can see, open and close THEIR register (they had no permission and could not sell without a register); closing someone else's is still for supervisors. 2) BRANCH WHEN OPENING A REGISTER: administrators pick the branch in a dropdown; cashiers see theirs locked. 3) PERMISSIONS: saving the permissions of a user whose role is shared no longer fails; that user moves to their own role (e.g. Cashier - valeria) and the app warns before saving. 4) BARCODE GENERATOR (mobile): searches by name or code and lets you pick products without stock. 5) Opening a register with an empty amount now asks for the amount instead of saying it cannot be negative.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-1.0.33-universal.apk",
-            "file_size_mb": 207.4,
-            "sha256": "a2c7bb83e50e40511178c8069f61a501dfe92dea77b743a9d3c0f82b320f0c78",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-1.0.34-universal.apk",
+            "file_size_mb": 207.5,
+            "sha256": "8517de509b1b10517cab4a22bbfcc7337ba19998aac5237d3488dcfc2d91a864",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-1.0.33-arm64-v8a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-1.0.34-arm64-v8a.apk",
                     "file_size_mb": 92.6,
-                    "sha256": "8d3390534e8490c5c51ed655648e9bcfeef94d92dee2484d5ae98a820076d746"
+                    "sha256": "d6753dd72d2d0e42c4f944e04d2b83bcd808fe22c9011223575e2cb6bfbc4c37"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-1.0.33-armeabi-v7a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-1.0.34-armeabi-v7a.apk",
                     "file_size_mb": 90.3,
-                    "sha256": "fd831b50cd1046d344dba4f11ab665bc03196ddb665188b5213f535976c74a22"
+                    "sha256": "225c5b8c80d8a9e5b81a5ee0ce2861183a09d2e3ac83f9511c3cb8d545ff23e5"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-1.0.33-x86_64.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-1.0.34-x86_64.apk",
                     "file_size_mb": 94.0,
-                    "sha256": "e099dabd58a0592d99fa37b1e3d3db4ca5ffd5b42c79e42fb3520dda3750edc5"
+                    "sha256": "652d0b035ee34859753f609b0e04f763f04e2e766eb92c455b4a85b124d805d9"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-Setup-1.0.33.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-Setup-1.0.34.exe",
             "file_size_mb": 38.5,
-            "sha256": "fe4ed6dc105a4cfc88dcf504b490ae39cda07226c3238d3db1e764b05d6a0114"
+            "sha256": "061d8cc1547a4716e9d5d02f5632bdc3669c78fe5534e09f61a0429d7e839043"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.32. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.33. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
