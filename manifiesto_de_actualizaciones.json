@@ -1,47 +1,47 @@
 {
     "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
-    "latest_version": "1.0.32",
+    "latest_version": "1.0.33",
     "min_version": "1.0.29",
     "is_mandatory": true,
     "release_date": "2026-10-14",
     "release_notes": {
-        "es": "Recuperar la contrasena ahora funciona y no deja a nadie encerrado. 1) EL CODIGO LLEGA: el servidor buscaba al dueno por coincidencia de texto con el correo de adentro del comercio y, si no coincidia, no mandaba nada ni avisaba. Ahora busca al dueno por su cuenta de la plataforma y le manda el codigo a ese correo. Recuperar es para el dueno de la cuenta; a un empleado le cambia la contrasena el administrador desde Usuarios, y la pantalla lo dice. 2) LA PANTALLA DEL CODIGO TIENE SALIDA: en PC no habia forma de volver si el codigo no llegaba. Ahora dice a que correo se mando y cuanto vale, que hacer si no llega, y ofrece Reenviar (con espera de 2 minutos), Cambiar correo y Volver al inicio de sesion. 3) En el celular, Reenviar usaba el reenvio del alta y nunca mandaba un codigo de recuperacion: corregido. 4) Si el dueno cambia su correo desde Usuarios, se actualiza tambien su cuenta de la plataforma, asi el ingreso y la recuperacion siguen funcionando.",
-        "en": "Password recovery now works and never leaves anyone stuck. 1) THE CODE ARRIVES: the server looked up the owner by matching the email text inside the business and, if it did not match, sent nothing and said nothing. It now finds the owner through their platform account and sends the code to that address. Recovery is for the account owner; an employee's password is changed by the administrator from Users, and the screen says so. 2) THE CODE SCREEN HAS A WAY OUT: on PC there was no way back if the code did not arrive. It now shows where the code was sent and how long it is valid, what to do if it does not arrive, and offers Resend (2-minute wait), Change email and Back to sign in. 3) On mobile, Resend used the sign-up resend and never sent a recovery code: fixed. 4) If the owner changes their email from Users, their platform account is updated too, so sign-in and recovery keep working.",
+        "es": "El cajero vuelve a poder vender y el comercio queda guardado en el equipo. 1) VENTA SIN BLOQUEOS: si falta el cliente o el impuesto por defecto, la venta toma el primero de la base y se puede cambiar antes de cobrar; la venta rapida ya no dice que no hay clientes. 2) CONFIGURACION -> VENTAS: nueva seccion para elegir el impuesto y el cliente por defecto del comercio (valen en todos los equipos). 3) CAJERO: ve su caja abierta (antes veia caja cerrada) y puede cobrar con el impuesto por defecto. 4) CERRAR SESION YA NO BORRA EL COMERCIO: el ingreso muestra Comercio: X con Cambiar, y si el correo es de otro comercio lo avisa y ofrece cambiarlo. 5) DATOS DE SUSCRIPCION (antes Suscribirse ahora): muestra el identificador del comercio con boton Copiar.",
+        "en": "Cashiers can sell again and the business stays saved on the device. 1) NO BLOCKED SALES: if the default customer or tax is missing, the sale takes the first one in the database and it can be changed before charging; quick sale no longer says there are no customers. 2) SETTINGS -> SALES: new section to choose the business default tax and customer (they apply on every device). 3) CASHIER: sees their open register (it used to show closed) and can charge with the default tax. 4) SIGNING OUT NO LONGER FORGETS THE BUSINESS: sign-in shows Business: X with Change, and if the email belongs to another business it says so and offers to switch. 5) SUBSCRIPTION DETAILS (formerly Subscribe now): shows the business ID with a Copy button.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-1.0.32-universal.apk",
-            "file_size_mb": 207.3,
-            "sha256": "1a828792eff2a51f27ea1c754a9536c00c2d99be19ab2e7b501e45b6978a322d",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-1.0.33-universal.apk",
+            "file_size_mb": 207.4,
+            "sha256": "a2c7bb83e50e40511178c8069f61a501dfe92dea77b743a9d3c0f82b320f0c78",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-1.0.32-arm64-v8a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-1.0.33-arm64-v8a.apk",
                     "file_size_mb": 92.6,
-                    "sha256": "c551b3d84d7a7811b42c3a3589202a728a7296be10316bac9a77dc4a247b94d3"
+                    "sha256": "8d3390534e8490c5c51ed655648e9bcfeef94d92dee2484d5ae98a820076d746"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-1.0.32-armeabi-v7a.apk",
-                    "file_size_mb": 90.2,
-                    "sha256": "b6e92c0faceed253059f5c80d01fb6cbc0b00247688a82d3d82324a24907518a"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-1.0.33-armeabi-v7a.apk",
+                    "file_size_mb": 90.3,
+                    "sha256": "fd831b50cd1046d344dba4f11ab665bc03196ddb665188b5213f535976c74a22"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-1.0.32-x86_64.apk",
-                    "file_size_mb": 93.9,
-                    "sha256": "14ed72a6665b0b01bd7713ff5463c281b87826794f3b00d94d93aa24cf449559"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-1.0.33-x86_64.apk",
+                    "file_size_mb": 94.0,
+                    "sha256": "e099dabd58a0592d99fa37b1e3d3db4ca5ffd5b42c79e42fb3520dda3750edc5"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.32/HalconPOS-Setup-1.0.32.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.33/HalconPOS-Setup-1.0.33.exe",
             "file_size_mb": 38.5,
-            "sha256": "37b65fa00dcd86e8dcfa4fbf358165c9c47c41b3754b54a88e165cbc650fb8a8"
+            "sha256": "fe4ed6dc105a4cfc88dcf504b490ae39cda07226c3238d3db1e764b05d6a0114"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 y 1.0.31. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.32. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
