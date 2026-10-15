@@ -1,47 +1,47 @@
 {
-    "_comentario": "Este archivo se PUBLICA en la raíz de https://github.com/halconlabsCOM/HalconPOS (rama main). Es lo primero que cada aplicación instalada consulta al arrancar. Ver release/COMO_PUBLICAR_UNA_VERSION.md antes de tocarlo.",
-    "latest_version": "1.0.34",
+    "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
+    "latest_version": "1.0.35",
     "min_version": "1.0.29",
     "is_mandatory": true,
-    "release_date": "2026-10-14",
+    "release_date": "2026-10-15",
     "release_notes": {
-        "es": "El cajero ya puede abrir su caja y guardar permisos no da error. 1) CAJA DEL CAJERO: quien vende puede ver, abrir y cerrar SU caja (antes no tenia permiso y sin caja no podia vender); cerrar la caja de otro sigue siendo del supervisor. 2) SUCURSAL AL ABRIR CAJA: el administrador elige la sucursal en un desplegable; el cajero ve la suya bloqueada. 3) PERMISOS: guardar los permisos de un usuario cuyo rol comparten otros ya no da error; ese usuario pasa a un rol propio (por ejemplo Cashier - valeria) y la app lo avisa antes de guardar. 4) GENERADOR DE CODIGOS DE BARRAS (celular): busca por nombre o codigo y deja elegir productos sin stock. 5) Abrir caja con el monto vacio ahora pide el monto en vez de decir que no puede ser negativo.",
-        "en": "Cashiers can open their register and saving permissions no longer fails. 1) CASHIER REGISTER: whoever sells can see, open and close THEIR register (they had no permission and could not sell without a register); closing someone else's is still for supervisors. 2) BRANCH WHEN OPENING A REGISTER: administrators pick the branch in a dropdown; cashiers see theirs locked. 3) PERMISSIONS: saving the permissions of a user whose role is shared no longer fails; that user moves to their own role (e.g. Cashier - valeria) and the app warns before saving. 4) BARCODE GENERATOR (mobile): searches by name or code and lets you pick products without stock. 5) Opening a register with an empty amount now asks for the amount instead of saying it cannot be negative.",
+        "es": "Descuento en el cobro, cobro mas rapido y comprobante por defecto. 1) DESCUENTO: en la PC, la Venta Rapida y Pos Sale se puede descontar en pesos sobre el total; solo lo ve quien tiene el permiso de precios (Owner, Super Admin, Admin, Manager), el cajero no; el IVA se calcula sobre lo descontado. 2) COBRO: ningun medio viene precargado; al tocar el importe de un medio el campo se vacia; Exacto completa lo que falta en el medio elegido; los montos redondos sugeridos aparecen solo con efectivo (en la PC reemplazan a $100/$500/$1000/$2000); para fiar se escribe el importe en Cuenta Corriente, y no se puede fiar y dar vuelto a la vez. 3) COMPROBANTE POR DEFECTO: se elige en Configuracion > Ventas y se usa siempre que ARCA lo permita para el cliente. 4) CORRECCIONES: el PDF de la venta muestra el vuelto; cobrar con un medio propio (por ejemplo QR) ya no deja una deuda falsa; en el celular vuelve a ofrecerse la Factura A.",
+        "en": "Checkout discount, faster payment and default receipt type. 1) DISCOUNT: on PC, Quick Sale and Pos Sale a discount in pesos can be applied to the total; only users with the price permission (Owner, Super Admin, Admin, Manager) see it, cashiers do not; VAT is computed on the discounted amount. 2) PAYMENT: no payment method is prefilled; tapping a method amount clears it; Exact fills what is still owed into the chosen method; suggested rounded amounts appear only for cash (on PC they replace $100/$500/$1000/$2000); credit sales are entered by typing the amount in Current Account, and credit and change cannot be combined. 3) DEFAULT RECEIPT TYPE: chosen in Settings > Sales and used whenever ARCA allows it for the customer. 4) FIXES: the sale PDF shows the change; paying with a business custom method (e.g. QR) no longer leaves a fake debt; Invoice A is offered again on mobile.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-1.0.34-universal.apk",
-            "file_size_mb": 207.5,
-            "sha256": "8517de509b1b10517cab4a22bbfcc7337ba19998aac5237d3488dcfc2d91a864",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-1.0.35-universal.apk",
+            "file_size_mb": 207.8,
+            "sha256": "55c10dbf78cd8cb093fca72ee45b9b6eb4e35b753c3268bf877cc4ee23fce7a8",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-1.0.34-arm64-v8a.apk",
-                    "file_size_mb": 92.6,
-                    "sha256": "d6753dd72d2d0e42c4f944e04d2b83bcd808fe22c9011223575e2cb6bfbc4c37"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-1.0.35-arm64-v8a.apk",
+                    "file_size_mb": 92.8,
+                    "sha256": "9d3b0e8ccc89489201595fab2bd599c6fdadd697726d878cc808874ca5ebbf60"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-1.0.34-armeabi-v7a.apk",
-                    "file_size_mb": 90.3,
-                    "sha256": "225c5b8c80d8a9e5b81a5ee0ce2861183a09d2e3ac83f9511c3cb8d545ff23e5"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-1.0.35-armeabi-v7a.apk",
+                    "file_size_mb": 90.4,
+                    "sha256": "77da7e1abd7649bbc794ca57ec1b85ec095de445102b0b3c9c8a2e8efc019f5a"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-1.0.34-x86_64.apk",
-                    "file_size_mb": 94.0,
-                    "sha256": "652d0b035ee34859753f609b0e04f763f04e2e766eb92c455b4a85b124d805d9"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-1.0.35-x86_64.apk",
+                    "file_size_mb": 94.1,
+                    "sha256": "38edc91a879ea971a120b8a2cbf370224b1172997f9cc3cdcf6c87232f223b90"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.34/HalconPOS-Setup-1.0.34.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-Setup-1.0.35.exe",
             "file_size_mb": 38.5,
-            "sha256": "061d8cc1547a4716e9d5d02f5632bdc3669c78fe5534e09f61a0429d7e839043"
+            "sha256": "a101263261783b0d7bbe7efd1336021c9fcea0b6fe3b91d46ca73614c496184e"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.33. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.34. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
