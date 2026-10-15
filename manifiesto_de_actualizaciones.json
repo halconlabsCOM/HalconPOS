@@ -1,47 +1,47 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.37",
+    "latest_version": "1.0.38",
     "min_version": "1.0.29",
     "is_mandatory": true,
     "release_date": "2026-10-15",
     "release_notes": {
-        "es": "PDF mas compactos, menos hojas impresas. En todos los PDF A4 (control y remito de transferencias, facturas de venta y compra, arqueo de caja, cobro de deudas, libros mayores e informes): el encabezado del comercio va solo en la primera hoja y las demas llevan una linea que identifica el documento; el encabezado de la tabla se repite en todas las hojas; cada hoja dice Pagina X de N; las firmas van solo al final; margenes y filas mas compactos. La factura de venta mantiene el QR y el CAE de ARCA en cada hoja y los totales solo en la ultima.",
-        "en": "More compact PDFs, fewer printed pages. In every A4 PDF (transfer control and delivery note, sale and purchase invoices, cash register summary, debt collection, ledgers and reports): the business header appears only on the first page and the others carry one line identifying the document; the table header repeats on every page; each page shows Page X of N; signatures appear only at the end; tighter margins and rows. The sale invoice keeps the ARCA QR and CAE on every page and the totals only on the last one.",
+        "es": "Idioma automatico. Si no elegiste un idioma a mano, la app usa el idioma de Windows o de Android (espanol o ingles; si el equipo esta en otro idioma, ingles) y lo sigue si lo cambias. En Configuracion > Idioma hay una opcion nueva, Idioma del sistema, para volver a la deteccion automatica despues de haber elegido uno fijo.",
+        "en": "Automatic language. If you did not choose a language manually, the app uses the Windows or Android language (Spanish or English; any other system language falls back to English) and follows it if you change it. Settings > Language has a new option, System language, to go back to automatic detection after choosing a fixed one.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.37/HalconPOS-1.0.37-universal.apk",
-            "file_size_mb": 207.9,
-            "sha256": "7ee3b484d0cb11a5c123998b7c4c2ac02de9913fadc4b1a623d820054aded9e5",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-1.0.38-universal.apk",
+            "file_size_mb": 208.0,
+            "sha256": "56142cedc36de26567aa10f951dafecef508e08b24a3e8d66c4c2362bebd0c60",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.37/HalconPOS-1.0.37-arm64-v8a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-1.0.38-arm64-v8a.apk",
                     "file_size_mb": 92.8,
-                    "sha256": "3ccc354fcf9aa4b92df41b49e1283d51bfe2abf9bcae1e2f280cb3ad01e71955"
+                    "sha256": "137f5af50bd7eeb7d8ec4a5e77fed4d1bc311cebf537687a1a32f95f0182db0c"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.37/HalconPOS-1.0.37-armeabi-v7a.apk",
-                    "file_size_mb": 90.4,
-                    "sha256": "df0facbc3aef6db31099f445a6bf13de8ab0bb83b81ef831a06f1b7cca20d87e"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-1.0.38-armeabi-v7a.apk",
+                    "file_size_mb": 90.5,
+                    "sha256": "b009e77fe25d8430be4b93e76cdf13f7b8431cb610d66b45fd0cbc252803f93e"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.37/HalconPOS-1.0.37-x86_64.apk",
-                    "file_size_mb": 94.1,
-                    "sha256": "431ef6d67d2e850400e218da6e9614962389ef30833c1f755e8d3954d106e3ae"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-1.0.38-x86_64.apk",
+                    "file_size_mb": 94.2,
+                    "sha256": "2681757b7bab880e1bf10a16228bf737e7a4c94db5e875e4d28722e2161dcc54"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.37/HalconPOS-Setup-1.0.37.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-Setup-1.0.38.exe",
             "file_size_mb": 38.6,
-            "sha256": "7d4415458188103b7a0adb90b71c52ce817238d8389b5e3d30846a15d012cee3"
+            "sha256": "37b52c0cb0709909a877e39e5cb9997ecef0091ec3dc7d538412c75f9c5bb4b4"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.36. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.37. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
