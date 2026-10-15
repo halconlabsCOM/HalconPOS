@@ -1,47 +1,47 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.35",
+    "latest_version": "1.0.36",
     "min_version": "1.0.29",
     "is_mandatory": true,
     "release_date": "2026-10-15",
     "release_notes": {
-        "es": "Descuento en el cobro, cobro mas rapido y comprobante por defecto. 1) DESCUENTO: en la PC, la Venta Rapida y Pos Sale se puede descontar en pesos sobre el total; solo lo ve quien tiene el permiso de precios (Owner, Super Admin, Admin, Manager), el cajero no; el IVA se calcula sobre lo descontado. 2) COBRO: ningun medio viene precargado; al tocar el importe de un medio el campo se vacia; Exacto completa lo que falta en el medio elegido; los montos redondos sugeridos aparecen solo con efectivo (en la PC reemplazan a $100/$500/$1000/$2000); para fiar se escribe el importe en Cuenta Corriente, y no se puede fiar y dar vuelto a la vez. 3) COMPROBANTE POR DEFECTO: se elige en Configuracion > Ventas y se usa siempre que ARCA lo permita para el cliente. 4) CORRECCIONES: el PDF de la venta muestra el vuelto; cobrar con un medio propio (por ejemplo QR) ya no deja una deuda falsa; en el celular vuelve a ofrecerse la Factura A.",
-        "en": "Checkout discount, faster payment and default receipt type. 1) DISCOUNT: on PC, Quick Sale and Pos Sale a discount in pesos can be applied to the total; only users with the price permission (Owner, Super Admin, Admin, Manager) see it, cashiers do not; VAT is computed on the discounted amount. 2) PAYMENT: no payment method is prefilled; tapping a method amount clears it; Exact fills what is still owed into the chosen method; suggested rounded amounts appear only for cash (on PC they replace $100/$500/$1000/$2000); credit sales are entered by typing the amount in Current Account, and credit and change cannot be combined. 3) DEFAULT RECEIPT TYPE: chosen in Settings > Sales and used whenever ARCA allows it for the customer. 4) FIXES: the sale PDF shows the change; paying with a business custom method (e.g. QR) no longer leaves a fake debt; Invoice A is offered again on mobile.",
+        "es": "Transferencias: precio de venta en el PDF de control. 1) Al imprimir el PDF de control de una transferencia, la app pregunta con que precio imprimir (Precio Publico por defecto; solo ofrece las escalas con precio cargado) y debajo de cada producto muestra su precio de venta vigente al imprimir, para que los vendedores de la sucursal destino vean los precios. 2) El PDF de control muestra el nombre de la variante (talle, color). 3) El remito, el ticket y el valor de la transferencia suman el ajuste de costo de la variante.",
+        "en": "Transfers: sale price on the control PDF. 1) When printing the control PDF of a transfer, the app asks which price to print (Public Price by default; only price tiers with prices loaded are offered) and shows each product's sale price as of printing, so sellers at the destination branch can see prices. 2) The control PDF shows the variant name (size, color). 3) The delivery note, the ticket and the transfer value include the variant cost adjustment.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-1.0.35-universal.apk",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.36/HalconPOS-1.0.36-universal.apk",
             "file_size_mb": 207.8,
-            "sha256": "55c10dbf78cd8cb093fca72ee45b9b6eb4e35b753c3268bf877cc4ee23fce7a8",
+            "sha256": "c473bf775a1773ed710d3f63bc16911f204dc277ca337905ca0f7518153a55e9",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-1.0.35-arm64-v8a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.36/HalconPOS-1.0.36-arm64-v8a.apk",
                     "file_size_mb": 92.8,
-                    "sha256": "9d3b0e8ccc89489201595fab2bd599c6fdadd697726d878cc808874ca5ebbf60"
+                    "sha256": "61be6d0ef121488965a697efbaeb64efba549acb5a0d8a828d91059264f20b16"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-1.0.35-armeabi-v7a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.36/HalconPOS-1.0.36-armeabi-v7a.apk",
                     "file_size_mb": 90.4,
-                    "sha256": "77da7e1abd7649bbc794ca57ec1b85ec095de445102b0b3c9c8a2e8efc019f5a"
+                    "sha256": "2aea08be6e2bac939f04270d35cd6a314eb0dda772be6cefc530dac638e96ab4"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-1.0.35-x86_64.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.36/HalconPOS-1.0.36-x86_64.apk",
                     "file_size_mb": 94.1,
-                    "sha256": "38edc91a879ea971a120b8a2cbf370224b1172997f9cc3cdcf6c87232f223b90"
+                    "sha256": "919447844f64c0c6101789cc95fcadfbdcf8ab2e10f9fbdce2e762bad23e513b"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.35/HalconPOS-Setup-1.0.35.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.36/HalconPOS-Setup-1.0.36.exe",
             "file_size_mb": 38.5,
-            "sha256": "a101263261783b0d7bbe7efd1336021c9fcea0b6fe3b91d46ca73614c496184e"
+            "sha256": "f85bb319295884c1f161816729c3387a31994db1951714a0bf9789d364fe41d2"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.34. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.35. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
