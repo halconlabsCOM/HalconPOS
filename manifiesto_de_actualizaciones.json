@@ -1,47 +1,47 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.38",
+    "latest_version": "1.0.39",
     "min_version": "1.0.29",
     "is_mandatory": true,
-    "release_date": "2026-10-15",
+    "release_date": "2026-10-16",
     "release_notes": {
-        "es": "Idioma automatico. Si no elegiste un idioma a mano, la app usa el idioma de Windows o de Android (espanol o ingles; si el equipo esta en otro idioma, ingles) y lo sigue si lo cambias. En Configuracion > Idioma hay una opcion nueva, Idioma del sistema, para volver a la deteccion automatica despues de haber elegido uno fijo.",
-        "en": "Automatic language. If you did not choose a language manually, the app uses the Windows or Android language (Spanish or English; any other system language falls back to English) and follows it if you change it. Settings > Language has a new option, System language, to go back to automatic detection after choosing a fixed one.",
+        "es": "Venta mas rapida y mas control. 1) VENTA RAPIDA (celular): ya no descarga todo el catalogo al abrir; se busca el producto solo por codigo de barras, escribiendolo y tocando la lupa (o Enter) o con la camara, directo en el servidor. Un codigo de variante (talle, color) entra directo. 2) POS SALE para supervisores (quien puede supervisar cajas: Owner, Super Admin, Admin, Manager), en celular y PC: elige la sucursal entre las permitidas y cualquier caja abierta de esa sucursal; el cobro muestra la sucursal de la venta. 3) CUENTAS Y ROLES en el celular iguales a PC: la cuenta tiene sucursal predeterminada y Roles y permisos lista roles. 4) CORRECCIONES: la caja elegida en otra sucursal ya no se pierde al guardar; los usuarios creados en PC nacen con su sucursal; los buscadores de PC encuentran con mayusculas.",
+        "en": "Faster selling and more control. 1) QUICK SALE (mobile): no longer downloads the whole catalog on open; products are searched only by barcode, typing it and tapping the magnifier (or Enter) or with the camera, on the server. A variant code (size, color) is added directly. 2) POS SALE for supervisors (users who can supervise cash registers: Owner, Super Admin, Admin, Manager), on mobile and PC: choose the branch among the allowed ones and any open register of that branch; checkout shows the sale branch. 3) ACCOUNTS AND ROLES on mobile match PC: the account has a default branch and Roles & permissions lists roles. 4) FIXES: a register chosen in another branch is no longer lost on save; users created on PC get their branch; PC search boxes match regardless of case.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-1.0.38-universal.apk",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.39/HalconPOS-1.0.39-universal.apk",
             "file_size_mb": 208.0,
-            "sha256": "56142cedc36de26567aa10f951dafecef508e08b24a3e8d66c4c2362bebd0c60",
+            "sha256": "0095ed91b8e055c8fdb464a2bff0ad8d25932aaaf88ed95a1aa0b5d7964926d7",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-1.0.38-arm64-v8a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.39/HalconPOS-1.0.39-arm64-v8a.apk",
                     "file_size_mb": 92.8,
-                    "sha256": "137f5af50bd7eeb7d8ec4a5e77fed4d1bc311cebf537687a1a32f95f0182db0c"
+                    "sha256": "5dc22dd28546af9a1736ac236b74311e8dbb762b9d6c9346ce8e8e382ac59351"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-1.0.38-armeabi-v7a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.39/HalconPOS-1.0.39-armeabi-v7a.apk",
                     "file_size_mb": 90.5,
-                    "sha256": "b009e77fe25d8430be4b93e76cdf13f7b8431cb610d66b45fd0cbc252803f93e"
+                    "sha256": "667f39c3834e73d78df0a7c7ee4edf79296c894f9ebd89d07d3a7660afcd6936"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-1.0.38-x86_64.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.39/HalconPOS-1.0.39-x86_64.apk",
                     "file_size_mb": 94.2,
-                    "sha256": "2681757b7bab880e1bf10a16228bf737e7a4c94db5e875e4d28722e2161dcc54"
+                    "sha256": "4325eb9e80ad0c92a0d0f41441b6ba13b90f1220bc2132df679d939ffa548e11"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.38/HalconPOS-Setup-1.0.38.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.39/HalconPOS-Setup-1.0.39.exe",
             "file_size_mb": 38.6,
-            "sha256": "37b52c0cb0709909a877e39e5cb9997ecef0091ec3dc7d538412c75f9c5bb4b4"
+            "sha256": "ebf4f9a1a9caf7edf8a4e9d9c9898066245e7b119f8bf675002f35d2c4ea945d"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.37. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.38. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
