@@ -1,47 +1,47 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.40",
+    "latest_version": "1.0.41",
     "min_version": "1.0.29",
     "is_mandatory": true,
     "release_date": "2026-10-17",
     "release_notes": {
-        "es": "Venta Rapida al instante y escala de precio del comercio. 1) VENTA RAPIDA (celular): la pantalla abre al instante y se puede escanear enseguida; cliente, caja y comprobantes cargan solos por detras. El producto encontrado se ve en una tarjeta grande con precio, existencia en la sucursal, codigo y cantidad; los demas quedan en Ver los productos. 2) ESCALA DE PRECIO PREDETERMINADA: se elige en Configuracion > Ventas y la Venta Rapida y el Pos Sale (celular y PC) arrancan con ella. La cambia quien supervisa cajas (tambien el Manager); un cliente Mayorista o Distribuidor usa la suya; cambiar la escala o el cliente recalcula todo el carrito. 3) TIPO DE CLIENTE en PC (Cliente, Mayorista, Distribuidor, Proveedor) y columna Tipo en el listado; editar un cliente en PC ya no le borra el tipo. 4) CORRECCIONES: Elegi la caja ya no ofrece cajas vencidas; la lista de clientes al cambiar el cliente ya no queda fuera de la pantalla; una variante en Precio 2, 3 o 4 suma su ajuste; al proveedor ya no se le vende a costo; la app reusa la conexion con el servidor (mas rapida en todas las pantallas).",
-        "en": "Instant Quick Sale and a store default price tier. 1) QUICK SALE (mobile): the screen opens instantly and you can scan right away; customer, register and invoice types load in the background. The found product shows in a large card with price, branch stock, barcode and quantity; the rest go under See the products. 2) DEFAULT PRICE TIER: chosen in Settings > Sales; Quick Sale and Pos Sale (mobile and PC) start with it. Whoever supervises cash registers can change it (Managers too); a Wholesaler or Dealer customer uses its own; changing the tier or the customer reprices the whole cart. 3) CUSTOMER TYPE on PC (Customer, Wholesaler, Dealer, Supplier) and a Type column in the list; editing a customer on PC no longer wipes its type. 4) FIXES: Choose the register no longer offers expired registers; the customer suggestions no longer fall off screen; a variant in Price 2, 3 or 4 adds its adjustment; suppliers are no longer sold at cost; the app reuses the server connection (faster on every screen).",
+        "es": "Productos mas rapidos, aviso de actualizacion y Mi perfil. 1) PRODUCTOS (celular): el catalogo baja comprimido (mucho menos datos por 4G), se procesa sin trabar la pantalla y al volver a entrar se muestra al instante mientras se actualiza solo; el buscador responde mejor y el stock de los combos se calcula una vez. Despues de vender, comprar, transferir, devolver o ajustar stock el catalogo se vuelve a pedir. 2) AVISO DE ACTUALIZACION: al abrir la app, si hay una version nueva aparece un aviso con Mas tarde y Actualizar ahora; si es obligatoria no se puede posponer. En el menu (las tres lineas) hay un item Actualizaciones con un punto rojo cuando hay una version nueva. 3) MI PERFIL: nuevo diseno; el cajero y el encargado ahora ven sus datos (antes la pantalla quedaba vacia) y pueden cambiar su contrasena; editar los datos queda para administradores. En PC, Editar Perfil igual. 4) CORRECCIONES: el cliente por defecto de la venta se busca con una sola consulta (antes bajaba la lista entera de clientes); el stock por lote se calcula mas rapido.",
+        "en": "Faster products, update notice and My profile. 1) PRODUCTS (mobile): the catalog downloads compressed (much less data on 4G), is processed without freezing the screen and shows instantly when you come back while it refreshes by itself; search responds better and combo stock is computed once. After selling, buying, transferring, returning or adjusting stock the catalog is fetched again. 2) UPDATE NOTICE: when the app opens, if a new version exists a notice offers Later and Update now; a mandatory one cannot be postponed. The menu (three lines) has an Updates item with a red dot when a new version is available. 3) MY PROFILE: new design; cashiers and managers now see their details (the screen used to be empty) and can change their password; editing the details is for administrators. Same for Edit Profile on PC. 4) FIXES: the sale's default customer is found with a single query (it used to download the whole customer list); stock by lot is computed faster.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.40/HalconPOS-1.0.40-universal.apk",
-            "file_size_mb": 208.2,
-            "sha256": "fb9e287c765229af716bdb06c5ac2468e427229d5812277fd97ec8c98a0f85d0",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-1.0.41-universal.apk",
+            "file_size_mb": 208.4,
+            "sha256": "3f15e1ef67575fe374b78a5a6e57e6b06f2ae6a339538921fa9b2746dd10886f",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.40/HalconPOS-1.0.40-arm64-v8a.apk",
-                    "file_size_mb": 92.8,
-                    "sha256": "b46d60267a1783b8918f74d8fbd1465114c19e2d4a51b6a6340e972077fd1e5f"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-1.0.41-arm64-v8a.apk",
+                    "file_size_mb": 92.9,
+                    "sha256": "9cefefb9bb26495e6f799a0bba9dde22e7bea9bd7f4155d575b37bb2264e87bf"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.40/HalconPOS-1.0.40-armeabi-v7a.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-1.0.41-armeabi-v7a.apk",
                     "file_size_mb": 90.6,
-                    "sha256": "4ccaa2fa33c0eb389e58f0025c04f3d02a0a0f49b4fc444320eef7133c8b2f24"
+                    "sha256": "74ec38e44e7c792da5f9c64a55d99b0949d42ec900a6a2b05321594b0b9187a6"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.40/HalconPOS-1.0.40-x86_64.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-1.0.41-x86_64.apk",
                     "file_size_mb": 94.2,
-                    "sha256": "e03e51682dee7e5f5479815fd6e218a7f482146cf7111b37bef47150020bb00d"
+                    "sha256": "410a9c65f52dff26b597966536f1a2be9ce8c00b580b7e6745b2a408514c2024"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.40/HalconPOS-Setup-1.0.40.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-Setup-1.0.41.exe",
             "file_size_mb": 38.6,
-            "sha256": "3123f8eafb321f9efde8b1b7d87d4912d6fc46a9539653d817788e5917f3b3dc"
+            "sha256": "65a59213033c07db9bb56f4acab4a7b8475e78c71f6a60169d8eec2cd3f873c2"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.39. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.40. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
