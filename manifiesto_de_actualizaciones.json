@@ -1,47 +1,47 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.41",
+    "latest_version": "1.0.42",
     "min_version": "1.0.29",
     "is_mandatory": true,
     "release_date": "2026-10-17",
     "release_notes": {
-        "es": "Productos mas rapidos, aviso de actualizacion y Mi perfil. 1) PRODUCTOS (celular): el catalogo baja comprimido (mucho menos datos por 4G), se procesa sin trabar la pantalla y al volver a entrar se muestra al instante mientras se actualiza solo; el buscador responde mejor y el stock de los combos se calcula una vez. Despues de vender, comprar, transferir, devolver o ajustar stock el catalogo se vuelve a pedir. 2) AVISO DE ACTUALIZACION: al abrir la app, si hay una version nueva aparece un aviso con Mas tarde y Actualizar ahora; si es obligatoria no se puede posponer. En el menu (las tres lineas) hay un item Actualizaciones con un punto rojo cuando hay una version nueva. 3) MI PERFIL: nuevo diseno; el cajero y el encargado ahora ven sus datos (antes la pantalla quedaba vacia) y pueden cambiar su contrasena; editar los datos queda para administradores. En PC, Editar Perfil igual. 4) CORRECCIONES: el cliente por defecto de la venta se busca con una sola consulta (antes bajaba la lista entera de clientes); el stock por lote se calcula mas rapido.",
-        "en": "Faster products, update notice and My profile. 1) PRODUCTS (mobile): the catalog downloads compressed (much less data on 4G), is processed without freezing the screen and shows instantly when you come back while it refreshes by itself; search responds better and combo stock is computed once. After selling, buying, transferring, returning or adjusting stock the catalog is fetched again. 2) UPDATE NOTICE: when the app opens, if a new version exists a notice offers Later and Update now; a mandatory one cannot be postponed. The menu (three lines) has an Updates item with a red dot when a new version is available. 3) MY PROFILE: new design; cashiers and managers now see their details (the screen used to be empty) and can change their password; editing the details is for administrators. Same for Edit Profile on PC. 4) FIXES: the sale's default customer is found with a single query (it used to download the whole customer list); stock by lot is computed faster.",
+        "es": "Top vendedores renovado. 1) NUEVO DISENO en la Inicio del celular, el tablero de PC y el Tablero ejecutivo: tres vistas (podio, barras de ranking y columnas) que se alternan al azar cada vez que se abre la pantalla, con los colores del tema en modo claro y oscuro. 2) MONTOS SOLO PARA ADMINISTRADORES: quien puede editar usuarios (Dueno, Super Admin, Admin) ve cuanto vendio cada uno; el resto (cajero, encargado, lector) ve el ranking con porcentajes y nunca pesos. El servidor ya no envia los montos a quien no puede verlos.",
+        "en": "Top sellers redesigned. 1) NEW DESIGN on the mobile Home, the PC dashboard and the Executive dashboard: three views (podium, ranking bars and columns) that rotate at random each time the screen opens, using the theme colors in light and dark mode. 2) AMOUNTS FOR ADMINISTRATORS ONLY: whoever can edit users (Owner, Super Admin, Admin) sees how much each seller sold; everyone else (cashier, manager, viewer) sees the ranking with percentages and never money. The server no longer sends the amounts to users who cannot see them.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-1.0.41-universal.apk",
-            "file_size_mb": 208.4,
-            "sha256": "3f15e1ef67575fe374b78a5a6e57e6b06f2ae6a339538921fa9b2746dd10886f",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.42/HalconPOS-1.0.42-universal.apk",
+            "file_size_mb": 208.8,
+            "sha256": "c1c6ed828ba2ed034b71080352a3b2beaa444dacb4f3770e4c190d5a71307f0f",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-1.0.41-arm64-v8a.apk",
-                    "file_size_mb": 92.9,
-                    "sha256": "9cefefb9bb26495e6f799a0bba9dde22e7bea9bd7f4155d575b37bb2264e87bf"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.42/HalconPOS-1.0.42-arm64-v8a.apk",
+                    "file_size_mb": 93.1,
+                    "sha256": "68351381ddd96fba65865706d336ced02349e71ad9f29d80aa5cfb33298a34c2"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-1.0.41-armeabi-v7a.apk",
-                    "file_size_mb": 90.6,
-                    "sha256": "74ec38e44e7c792da5f9c64a55d99b0949d42ec900a6a2b05321594b0b9187a6"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.42/HalconPOS-1.0.42-armeabi-v7a.apk",
+                    "file_size_mb": 90.8,
+                    "sha256": "689c8093d28641e825ab99210b9d72168f36f4787d169acc92a41906f8d1a1c4"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-1.0.41-x86_64.apk",
-                    "file_size_mb": 94.2,
-                    "sha256": "410a9c65f52dff26b597966536f1a2be9ce8c00b580b7e6745b2a408514c2024"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.42/HalconPOS-1.0.42-x86_64.apk",
+                    "file_size_mb": 94.4,
+                    "sha256": "881a5b822e96f9c0c51e710bea8de86951fb5965d1f55fc8f1961e2ae5dfc789"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.41/HalconPOS-Setup-1.0.41.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.42/HalconPOS-Setup-1.0.42.exe",
             "file_size_mb": 38.6,
-            "sha256": "65a59213033c07db9bb56f4acab4a7b8475e78c71f6a60169d8eec2cd3f873c2"
+            "sha256": "e654dd999e6e376d7819f4d43f33207aa8d0c8bf0957aed3eb7aeb70dbba5bed"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.40. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.41. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
