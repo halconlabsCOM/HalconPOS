@@ -1,47 +1,47 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.44",
+    "latest_version": "1.0.45",
     "min_version": "1.0.29",
     "is_mandatory": true,
     "release_date": "2026-10-18",
     "release_notes": {
-        "es": "Nueva pantalla de inicio en el celular. 1) UN SOLO SPLASH: antes se veian dos pantallas de arranque con el logo distinto (recortado en un circulo y despues en otro lugar); ahora el logo aparece entero en el centro y desde ahi cobra vida, sin saltos. 2) Dos animaciones que se alternan al azar en cada apertura: una orbita dorada alrededor del logo o una curva de ventas que sube y hace de barra de progreso. 3) Abre mas rapido: la espera minima de la pantalla de inicio bajo de 1 s a 0,6 s. 4) El pie dice ahora «Desarrollado por HalconPOS Inc.».",
-        "en": "New startup screen on mobile. 1) A SINGLE SPLASH: there used to be two startup screens with a different logo (cropped in a circle and then somewhere else); now the full logo appears in the center and comes to life from there, with no jumps. 2) Two animations that alternate at random on each launch: a golden orbit around the logo or a rising sales curve that works as the progress bar. 3) Opens faster: the minimum splash time went down from 1 s to 0.6 s. 4) The footer now reads «Developed by HalconPOS Inc.».",
+        "es": "Nueva Inicio del celular. 1) Encabezado con saludo, rol, sucursal y caja abierta, y campana con la cantidad de avisos. 2) Buscador de modulos. 3) Resumen de hoy animado e interactivo: las ventas del dia en grande, la tendencia contra ayer y la curva hora por hora; con «7 dias» se ve la semana, y al tocar la curva se ve el valor de cada hora o dia. 4) Barra de lo cobrado, accesos frecuentes que se pueden elegir y modulos en una grilla de iconos por grupo. 5) Auditoria reciente escrita en frases. 6) Barra inferior flotante con el boton del punto de venta. Quien no puede editar usuarios ve cantidades y porcentajes, nunca montos. Corregido: en la Venta Rapida, con el teclado abierto, los botones rapidos de cobro (Exacto) quedan a la vista y el carrito vacio ya no se corta.",
+        "en": "New mobile Home. 1) Header with greeting, role, branch and open cash register, and a bell with the number of alerts. 2) Module search. 3) Animated, interactive summary of today: the day's sales in large type, the trend against yesterday and the hour-by-hour curve; «7 days» shows the week, and tapping the curve shows each hour or day value. 4) Collected bar, customizable frequent shortcuts and modules in an icon grid by group. 5) Recent audit written as sentences. 6) Floating bottom bar with the point-of-sale button. Users who cannot edit users see counts and percentages, never amounts. Fixed: in Quick Sale, with the keyboard open, the quick payment buttons (Exact) stay visible and the empty cart no longer gets cut off.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.44/HalconPOS-1.0.44-universal.apk",
-            "file_size_mb": 209.7,
-            "sha256": "9819624a46520db52ad83db7c679032ffeef237399e93e208ccfd1bfbda9f6de",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.45/HalconPOS-1.0.45-universal.apk",
+            "file_size_mb": 210.0,
+            "sha256": "848daecb47f149a7b2abbd52bceb916a62e18b04d028340d84d524f5b2d1f45a",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.44/HalconPOS-1.0.44-arm64-v8a.apk",
-                    "file_size_mb": 94.1,
-                    "sha256": "a1c6e572c02db9290723923ad7ac7628845eb746ff96b6233963e3295c5867f0"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.45/HalconPOS-1.0.45-arm64-v8a.apk",
+                    "file_size_mb": 94.2,
+                    "sha256": "e4647a34800f0ef86440d33a6f96cb28d775041b2e58e58aa54ff2ec6a4f318c"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.44/HalconPOS-1.0.44-armeabi-v7a.apk",
-                    "file_size_mb": 91.8,
-                    "sha256": "a4cf1f22675fe8e2a51d1e2d364ce12a9e976347da6430ab8d94c7a88f2e3aca"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.45/HalconPOS-1.0.45-armeabi-v7a.apk",
+                    "file_size_mb": 91.9,
+                    "sha256": "db9f90d3e26255bd42d33bfc08794f28bc05b23f3d193cc5641a318c78ce33d8"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.44/HalconPOS-1.0.44-x86_64.apk",
-                    "file_size_mb": 95.4,
-                    "sha256": "fcfa17d77c0d26b60c594511acfff246b1166f55c36ef901ae251816d5882ba9"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.45/HalconPOS-1.0.45-x86_64.apk",
+                    "file_size_mb": 95.6,
+                    "sha256": "8c48fcbbab3410c41637421d5b16ae73d50b33e1394a489f190ca24823fddf90"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.44/HalconPOS-Setup-1.0.44.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.45/HalconPOS-Setup-1.0.45.exe",
             "file_size_mb": 38.6,
-            "sha256": "201998573f07e65aeb972c97082e0b2256ccfff00943a3b8158d80a3648e3c3c"
+            "sha256": "6e0abe3b4c46d8415f977513ee1513335730fa44eeb9e15da2a1c646f4a791c1"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.43. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda en 1.0.29, igual que en 1.0.30 a 1.0.44. Es la decision del dueno del 13/10/2026 al elegir la Microsoft Store (MSIX) como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. La certificacion de la Store tarda entre horas y tres dias, y la identidad del paquete todavia esta en PENDIENTE hasta que se copie de Partner Center. Hasta entonces Windows sigue por el instalador Inno de transicion. Esta version se OFRECE a todos y no bloquea a nadie."
 }
