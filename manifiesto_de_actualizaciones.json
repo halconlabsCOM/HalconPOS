@@ -1,47 +1,47 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.46",
+    "latest_version": "1.0.47",
     "min_version": "1.0.46",
     "is_mandatory": true,
-    "release_date": "2026-10-18",
+    "release_date": "2026-10-26",
     "release_notes": {
-        "es": "Roles y permisos: cada pantalla decide por el permiso del usuario y no por el nombre de su rol, igual en la nube y en la base local. 1) Quien no tiene permiso de ver precios de compra ve «Oculto» en costos y margenes (PC y celular). 2) Abrir la caja lo decide el permiso de movimientos de caja; quien tiene acceso a todas las sucursales elige la sucursal de la caja. 3) Nueva pantalla «Informacion del sistema» (motor, tamano y zona horaria de la base, hora del servidor, version de la app) con «Copiar para soporte», para quien tenga ese permiso. 4) Gastos, ingresos y cobros ofrecen las cuentas y bancos para elegir aunque el usuario no pueda ver el plan de cuentas ni los saldos. 5) Un administrador con permisos recortados no puede darse permisos que no tiene ni modificar al Super Admin. Corregido: un doble clic en «Guardar» registraba el gasto o el ingreso dos veces (tambien en compras de PC y en el POS del celular); el rol Viewer ya no puede cobrar deudas; en la ficha del producto del celular el margen ya no aparece como 0% cuando no hay dato.",
-        "en": "Roles and permissions: every screen decides by the user's permission and not by the name of their role, the same in the cloud and in the local database. 1) Users without permission to see purchase prices see «Hidden» in costs and margins (PC and phone). 2) Opening the cash register depends on the cash movements permission; users with access to every branch choose the register's branch. 3) New «System information» screen (database engine, size and time zone, server time, app version) with «Copy for support», for users with that permission. 4) Expenses, incomes and collections offer the accounts and banks to choose from even when the user cannot see the chart of accounts or the balances. 5) An administrator with reduced permissions cannot grant permissions they do not have nor modify the Super Admin. Fixed: a double click on «Save» registered the expense or income twice (also in PC purchases and the phone POS); the Viewer role can no longer collect debts; in the phone product sheet the margin no longer shows 0% when there is no data.",
+        "es": "Caja corregida de punta a punta, en PC y en Movil, y los borradores de Compras y Distribucion Masiva. 1) CAJA: todo movimiento de plata -gastos, ingresos, mover dinero, cobros de deuda, adelantos y cargos- usa la sucursal de la CAJA que elegiste y no la que tenias activa; una sucursal ajena se rechaza; y abrir una caja en otra sucursal te pregunta primero si vas a operar ahi. Una lectura que falla muestra un unico «Reintentar» en lugar de pantallas distintas, el estado de un cheque desconocido dice «Desconocido» y no ofrece acciones, y «Todas las transacciones» de Movil muestra el tipo traducido. 2) COMPRAS: usan la caja de la bodega elegida, avisan en que caja entra la plata y la barra superior de Movil la muestra. 3) BORRADORES (HOLD): Compras y Distribucion Masiva guardan el trabajo en curso en el equipo, en PC y en Movil, con sus pagos; al recuperarlo en PC se abre el primer producto del carrito. 4) PC: Productos y Distribucion Masiva tienen encabezados que ordenan. 5) NOMINA: pagar una liquidacion sin conexion avisa en lugar de cortarse con un error. 6) Ingresos Brutos pasa a guardarse como texto (lleva guiones y ceros a la izquierda) y las alertas de stock aceptan decimales (0,4 kg ya no queda en 0). El esquema del servidor ya esta actualizado para todo esto.",
+        "en": "Cash register fixed end to end, on desktop and mobile, plus drafts for Purchases and Mass Distribution. 1) CASH: every money movement -expenses, income, moving money, debt collections, advances and charges- uses the branch of the REGISTER you picked, not the one you had active; a foreign branch is rejected; and opening a register in another branch first asks whether you will operate there. A failed read shows a single \"Retry\" instead of different screens, an unknown cheque status reads \"Unknown\" with no actions, and mobile \"All transactions\" shows the translated type. 2) PURCHASES use the chosen warehouse's register, tell you which register the money goes into, and the mobile top bar shows it. 3) DRAFTS (HOLD): Purchases and Mass Distribution keep work in progress on the device, on desktop and mobile, payments included; restoring it on desktop opens the first cart product. 4) Desktop: Products and Mass Distribution have sortable headers. 5) PAYROLL: paying a settlement while offline warns instead of failing with an error. 6) Gross-income registration is now stored as text (it carries dashes and leading zeros) and stock alerts accept decimals (0.4 kg no longer rounds to 0). The server schema is already updated for all of this.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.46/HalconPOS-1.0.46-universal.apk",
-            "file_size_mb": 210.2,
-            "sha256": "216cb36d30093b6784f1dedc9d39170cad88b368b43e38355ea8aca4be8a71de",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-1.0.47-universal.apk",
+            "file_size_mb": 192.7,
+            "sha256": "5bede9d0bec5fb5c2baa2573e4b5feea400c80aee0581ac96a420f0a0f3f577e",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.46/HalconPOS-1.0.46-arm64-v8a.apk",
-                    "file_size_mb": 94.3,
-                    "sha256": "bb770ce714d71defad3435c27a340d99b127b7caac97178836fe0185e33e6d02"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-1.0.47-arm64-v8a.apk",
+                    "file_size_mb": 87.4,
+                    "sha256": "308d6fb1eabbb1efcfec443c8247d9bc2429588b33417c3cfa508b79d57fa413"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.46/HalconPOS-1.0.46-armeabi-v7a.apk",
-                    "file_size_mb": 92.0,
-                    "sha256": "8af19c927040b9d6e95992de5298f83aa999fb60fa5c598c80197c9308d38d54"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-1.0.47-armeabi-v7a.apk",
+                    "file_size_mb": 87.4,
+                    "sha256": "06764b8dbbd99a8ae306903a8bbff5d3bb6b34a0ae05d734f46285fd2dfef73e"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.46/HalconPOS-1.0.46-x86_64.apk",
-                    "file_size_mb": 95.6,
-                    "sha256": "ee2201d8437fdcd7fc21ddf7697a8d15c178efa9399bc2b027035c6fc36ad11b"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-1.0.47-x86_64.apk",
+                    "file_size_mb": 88.6,
+                    "sha256": "b256b3cd39b60c2292971c4090b63a068306d6c7c742137a42742e81659716cb"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.46/HalconPOS-Setup-1.0.46.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-Setup-1.0.47.exe",
             "file_size_mb": 38.6,
-            "sha256": "a948b1ebf8b29fad42e0f53bc1f624efa518a8a7fdd56baa8c80833f69e7ac83"
+            "sha256": "6d6cede5c9807d1354afc4db58b97a9db3bf3a4f0750dd54053f8e530b3fdfd3"
         }
     },
-    "_por_que_min_version_sube_ahora": "SUBE a 1.0.46. Decision del dueno del 18/10/2026, confirmada en el dialogo al publicar: 1.0.46 corrige un error de dinero (un doble clic en Guardar registraba el gasto o el ingreso dos veces, tambien en compras de PC y en el POS del celular) y ese arreglo solo llega a quien tenga esta version. La regla del 13/10/2026 (min_version sube despues de que la Microsoft Store publique) no bloquea a nadie hoy: la identidad del paquete sigue en PENDIENTE, no hay clientes de la Store, y Windows se actualiza por el instalador Inno de transicion. Antes de subirla se verifico que los cinco binarios descargan (200, tamano exacto), llevan api.halconpos.com, la firma de siempre, y que el ejecutable 1.0.46+47 arranca."
+    "_por_que_min_version_sube_ahora": "NO sube: min_version queda donde estaba publicada. Dos razones. Primero, la decision del dueno del 13/10/2026 al elegir la Microsoft Store como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. Segundo, esta version se OFRECE a todos y no se fuerza: no se midio que las versiones anteriores dejen de funcionar contra el servidor actual, asi que no hay motivo medido para bloquearlas."
 }
