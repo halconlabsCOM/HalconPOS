@@ -1,46 +1,46 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.47",
+    "latest_version": "1.0.48",
     "min_version": "1.0.46",
     "is_mandatory": true,
-    "release_date": "2026-10-26",
+    "release_date": "2026-10-31",
     "release_notes": {
-        "es": "Caja corregida de punta a punta, en PC y en Movil, y los borradores de Compras y Distribucion Masiva. 1) CAJA: todo movimiento de plata -gastos, ingresos, mover dinero, cobros de deuda, adelantos y cargos- usa la sucursal de la CAJA que elegiste y no la que tenias activa; una sucursal ajena se rechaza; y abrir una caja en otra sucursal te pregunta primero si vas a operar ahi. Una lectura que falla muestra un unico «Reintentar» en lugar de pantallas distintas, el estado de un cheque desconocido dice «Desconocido» y no ofrece acciones, y «Todas las transacciones» de Movil muestra el tipo traducido. 2) COMPRAS: usan la caja de la bodega elegida, avisan en que caja entra la plata y la barra superior de Movil la muestra. 3) BORRADORES (HOLD): Compras y Distribucion Masiva guardan el trabajo en curso en el equipo, en PC y en Movil, con sus pagos; al recuperarlo en PC se abre el primer producto del carrito. 4) PC: Productos y Distribucion Masiva tienen encabezados que ordenan. 5) NOMINA: pagar una liquidacion sin conexion avisa en lugar de cortarse con un error. 6) Ingresos Brutos pasa a guardarse como texto (lleva guiones y ceros a la izquierda) y las alertas de stock aceptan decimales (0,4 kg ya no queda en 0). El esquema del servidor ya esta actualizado para todo esto.",
-        "en": "Cash register fixed end to end, on desktop and mobile, plus drafts for Purchases and Mass Distribution. 1) CASH: every money movement -expenses, income, moving money, debt collections, advances and charges- uses the branch of the REGISTER you picked, not the one you had active; a foreign branch is rejected; and opening a register in another branch first asks whether you will operate there. A failed read shows a single \"Retry\" instead of different screens, an unknown cheque status reads \"Unknown\" with no actions, and mobile \"All transactions\" shows the translated type. 2) PURCHASES use the chosen warehouse's register, tell you which register the money goes into, and the mobile top bar shows it. 3) DRAFTS (HOLD): Purchases and Mass Distribution keep work in progress on the device, on desktop and mobile, payments included; restoring it on desktop opens the first cart product. 4) Desktop: Products and Mass Distribution have sortable headers. 5) PAYROLL: paying a settlement while offline warns instead of failing with an error. 6) Gross-income registration is now stored as text (it carries dashes and leading zeros) and stock alerts accept decimals (0.4 kg no longer rounds to 0). The server schema is already updated for all of this.",
+        "es": "Facturacion electronica, permisos sobre montos, importacion de productos e impresion. 1) FACTURA ELECTRONICA: en «Facturar venta» podes elegir la fecha de la factura (hasta 5 dias antes de hoy); esa fecha se envia a ARCA y queda en la factura, y la venta no cambia. 2) PERMISOS: el Estado de Situacion, los montos de la lista comun y los montos y el margen potencial del stock solo se ven con el permiso alto (users.update), en PC y en Movil. El catalogo de stock queda acotado a las sucursales del usuario. 3) PC: la lista de ventas fue rediseñada y el dialogo del identificador del negocio es mas simple, con validacion en vivo y sin jerga tecnica. 4) PRODUCTOS: la importacion desde Excel detecta las columnas sin depender del orden; ademas, Movil suma el estado Activo/Inactivo de producto con lista de gestion y Reactivar, y 25 correcciones en Productos y Ventas. 5) IMPRESION: unas 30 correcciones en tickets, PDF y Excel (datos fiscales en tickets de imagen, totales unificados, devoluciones descontadas en el reporte de ventas, estados traducidos, sin recibos en cero ni errores crudos en los PDF).",
+        "en": "Electronic invoicing, permissions on amounts, product import and printing. 1) ELECTRONIC INVOICE: in \"Invoice sale\" you can pick the invoice date (up to 5 days before today); that date is sent to ARCA and stored on the invoice, and the sale is unchanged. 2) PERMISSIONS: the Financial Position statement, common-list amounts and stock amounts and potential margin are shown only with the high permission (users.update), on desktop and mobile. The stock catalog is limited to the user's branches. 3) DESKTOP: the sales list was redesigned and the business-identifier dialog is simpler, with live validation and no technical jargon. 4) PRODUCTS: Excel import detects columns regardless of order; mobile also gains the product Active/Inactive status with a management list and Reactivate, plus 25 fixes in Products and Sales. 5) PRINTING: about 30 fixes in tickets, PDFs and Excel (fiscal data on image tickets, unified totals, returns netted in the sales report, translated statuses, no zero-amount receipts or raw errors in PDFs).",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-1.0.47-universal.apk",
-            "file_size_mb": 192.7,
-            "sha256": "5bede9d0bec5fb5c2baa2573e4b5feea400c80aee0581ac96a420f0a0f3f577e",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.48/HalconPOS-1.0.48-universal.apk",
+            "file_size_mb": 192.9,
+            "sha256": "2500194a205da93c8c016086194836a9f7a503d1b835eac5599b426a1b1a70a5",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-1.0.47-arm64-v8a.apk",
-                    "file_size_mb": 87.4,
-                    "sha256": "308d6fb1eabbb1efcfec443c8247d9bc2429588b33417c3cfa508b79d57fa413"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.48/HalconPOS-1.0.48-arm64-v8a.apk",
+                    "file_size_mb": 87.5,
+                    "sha256": "dee3fe8335273db89707b82fb270ee171555384dc30d897cecd4107606e1d5ad"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-1.0.47-armeabi-v7a.apk",
-                    "file_size_mb": 87.4,
-                    "sha256": "06764b8dbbd99a8ae306903a8bbff5d3bb6b34a0ae05d734f46285fd2dfef73e"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.48/HalconPOS-1.0.48-armeabi-v7a.apk",
+                    "file_size_mb": 87.5,
+                    "sha256": "ab844bcdb0f71cd43f1e1559a0060bad3421907bfd627a9c93f2b4219792533e"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-1.0.47-x86_64.apk",
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.48/HalconPOS-1.0.48-x86_64.apk",
                     "file_size_mb": 88.6,
-                    "sha256": "b256b3cd39b60c2292971c4090b63a068306d6c7c742137a42742e81659716cb"
+                    "sha256": "c5165c53a96ae3c5e545bae113a8d42ddea51d7d3d6e9e8c38e951588aad888a"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.47/HalconPOS-Setup-1.0.47.exe",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.48/HalconPOS-Setup-1.0.48.exe",
             "file_size_mb": 38.6,
-            "sha256": "6d6cede5c9807d1354afc4db58b97a9db3bf3a4f0750dd54053f8e530b3fdfd3"
+            "sha256": "c05ea100a01728c8b880f1a1ba2564ceee7bcb09d98a71d9ac96619394d4739e"
         }
     },
     "_por_que_min_version_sube_ahora": "NO sube: min_version queda donde estaba publicada. Dos razones. Primero, la decision del dueno del 13/10/2026 al elegir la Microsoft Store como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. Segundo, esta version se OFRECE a todos y no se fuerza: no se midio que las versiones anteriores dejen de funcionar contra el servidor actual, asi que no hay motivo medido para bloquearlas."
