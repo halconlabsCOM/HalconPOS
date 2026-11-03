@@ -1,46 +1,46 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.49",
+    "latest_version": "1.0.50",
     "min_version": "1.0.46",
     "is_mandatory": true,
-    "release_date": "2026-11-01",
+    "release_date": "2026-11-02",
     "release_notes": {
-        "es": "Facturacion electronica con ARCA. 1) En «Facturar venta» los campos de la factura se pueden editar y lo que elegis llega a ARCA. 2) El metodo de ARCA ya no depende del modo de trabajo y «Cliente Directo en Nube» vuelve a funcionar. 3) La fecha minima de la factura es la del ultimo comprobante autorizado de la secuencia.",
-        "en": "Electronic invoicing with ARCA. 1) In \"Invoice sale\" the invoice fields are editable and what you choose is sent to ARCA. 2) The ARCA method no longer depends on the working mode, and \"Direct Cloud Client\" works again. 3) The minimum invoice date is the date of the last authorized voucher in the sequence.",
+        "es": "Modo sin conexion y hora unica del comercio. 1) La Venta Rapida y el POS cobran sin internet (numeracion OFF-, ticket no fiscal) y sincronizan solos al volver la red. 2) Todas las fechas se registran con la zona horaria del comercio. 3) Las ventas del celular guardan el codigo de barras y el POS ofrece todas las escalas de precio desde el primer instante. 4) PC con base local: el perfil del comercio y el saldo inicial piden permiso; el Balance y la Ganancia por comprobante respetan las sucursales del usuario.",
+        "en": "Offline mode and a single business clock. 1) Quick Sale and POS can charge without internet (OFF- numbering, non-fiscal ticket) and sync by themselves when the connection returns. 2) Every date is recorded in the business time zone. 3) Mobile sales keep each line's barcode and the POS offers every price tier from the first moment. 4) PC with a local database: the business profile and the opening balance require permission; the Balance Sheet and the Profit by invoice respect the user's branches.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.49/HalconPOS-1.0.49-universal.apk",
-            "file_size_mb": 193.0,
-            "sha256": "fb304797bfdc0cf52a9ca3d68eed386e9e34957ea131295504c7bd81deb8bdaf",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.50/HalconPOS-1.0.50-universal.apk",
+            "file_size_mb": 203.4,
+            "sha256": "080beb7a65ef471920a10090064782ca7b617f66af67d857e837db907b090972",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.49/HalconPOS-1.0.49-arm64-v8a.apk",
-                    "file_size_mb": 87.5,
-                    "sha256": "1920cf3b538d5f9b25b618322175f64e08e44743a93860af19bebc46e8aa71a1"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.50/HalconPOS-1.0.50-arm64-v8a.apk",
+                    "file_size_mb": 90.9,
+                    "sha256": "be89c4fa1af7e9f20ec77898c8deadd6223f888d1cd9cf020b93a60f8dfc285a"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.49/HalconPOS-1.0.49-armeabi-v7a.apk",
-                    "file_size_mb": 87.5,
-                    "sha256": "41fcab08cee8e052178cc18bd3ba8a428fc5c52080897291ab4871a3f14e0907"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.50/HalconPOS-1.0.50-armeabi-v7a.apk",
+                    "file_size_mb": 91.1,
+                    "sha256": "9a3e79e773ffa871dbcf1b4514e4b1ff5052cf616b53c74a93e18dde89dfd117"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.49/HalconPOS-1.0.49-x86_64.apk",
-                    "file_size_mb": 88.6,
-                    "sha256": "96b242eb39db591859b2c85fcba0d8a905d34b6754943f9c3e75116bd8b8b56c"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.50/HalconPOS-1.0.50-x86_64.apk",
+                    "file_size_mb": 92.1,
+                    "sha256": "9d2356e10b1291b4d50c9e72171be1e9eaf53fe1c02c62a71203f324632e25ae"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.49/HalconPOS-Setup-1.0.49.exe",
-            "file_size_mb": 38.6,
-            "sha256": "03818f3f3954b91a0441a2b1e4b7bf537f846828011596dd91914b3272460c1c"
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.50/HalconPOS-Setup-1.0.50.exe",
+            "file_size_mb": 39.8,
+            "sha256": "a5c9a4082c317ce94d31b8f4c0558507e18ba1d34421da603c68f8bbad83442d"
         }
     },
     "_por_que_min_version_sube_ahora": "NO sube: min_version queda donde estaba publicada. Dos razones. Primero, la decision del dueno del 13/10/2026 al elegir la Microsoft Store como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. Segundo, esta version se OFRECE a todos y no se fuerza: no se midio que las versiones anteriores dejen de funcionar contra el servidor actual, asi que no hay motivo medido para bloquearlas."
