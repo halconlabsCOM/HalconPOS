@@ -1,47 +1,47 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.51",
-    "min_version": "1.0.46",
+    "latest_version": "1.0.52",
+    "min_version": "1.0.52",
     "is_mandatory": true,
-    "release_date": "2026-11-03",
+    "release_date": "2026-11-04",
     "release_notes": {
-        "es": "Factura electronica mas facil. 1) Nuevo asistente «Activar factura electronica»: genera la clave y la solicitud del certificado en el equipo, muestra con una simulacion del portal de ARCA que tocar paso a paso, valida el .crt y prueba la conexion. 2) Importar a mano acepta las claves .key en formato PKCS#1 (BEGIN RSA PRIVATE KEY) y avisa si una clave no se puede leer. 3) Nueva pantalla «Condiciones frente al IVA» en PC y celular: alta, edicion, baja y reactivar, con el codigo de ARCA.",
-        "en": "Easier electronic invoicing. 1) New «Activate electronic invoicing» wizard: it generates the key and the certificate request on the device, shows with a simulation of the ARCA portal what to click step by step, validates the .crt and tests the connection. 2) Manual import accepts PKCS#1 .key files (BEGIN RSA PRIVATE KEY) and warns when a key cannot be read. 3) New «VAT conditions» screen on PC and mobile: add, edit, deactivate and reactivate, with the ARCA code.",
+        "es": "Recursos Humanos nuevo, en PC y en el celular: legajos de empleados con foto, horarios y sueldo; fichaje con PIN y desde el celular; licencias y feriados; liquidacion de sueldos con conceptos propios y plantilla de convenio; adelantos y descuentos; pago de la liquidacion desde la caja. Reemplaza las pantallas anteriores de RR. HH., que dejan de funcionar: por eso esta version es obligatoria.",
+        "en": "New Human Resources module on PC and mobile: employee records with photo, schedules and salary; clock-in with PIN and from the phone; leave and holidays; payroll with custom pay items and a collective agreement template; advances and deductions; paying payroll from the cash register. It replaces the previous HR screens, which stop working: that is why this version is mandatory.",
         "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
     },
     "platforms": {
         "android": {
             "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.51/HalconPOS-1.0.51-universal.apk",
-            "file_size_mb": 203.7,
-            "sha256": "c12409b826cbcc213b3e1a366b9083989d9622dbd48fa9b20990ef63a9be415c",
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.52/HalconPOS-1.0.52-universal.apk",
+            "file_size_mb": 199.1,
+            "sha256": "9230a49fe7fa4608b7b606edcd7c1b386e975728ba5b3ac88120de6f9c7dd28b",
             "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
             "abis": {
                 "arm64-v8a": {
                     "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.51/HalconPOS-1.0.51-arm64-v8a.apk",
-                    "file_size_mb": 91.0,
-                    "sha256": "cec5098b000c107081a0188bf173ccb3a5c089f61ac25afc007e80ad0d16ae7d"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.52/HalconPOS-1.0.52-arm64-v8a.apk",
+                    "file_size_mb": 89.5,
+                    "sha256": "cc332f3b154c1c84074876ebdf934dae8de26177c77e9dbbb4ac9b0d43d671aa"
                 },
                 "armeabi-v7a": {
                     "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.51/HalconPOS-1.0.51-armeabi-v7a.apk",
-                    "file_size_mb": 91.2,
-                    "sha256": "004bb2a73642080b1d71cb1f42f2d1e48a1ee2bfa580ab550d7ca8d38f1ccb0e"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.52/HalconPOS-1.0.52-armeabi-v7a.apk",
+                    "file_size_mb": 89.5,
+                    "sha256": "ac2eddfa42da143ef055f09cf743975b4cf36d33f71e192bb80d4582abf8de3e"
                 },
                 "x86_64": {
                     "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.51/HalconPOS-1.0.51-x86_64.apk",
-                    "file_size_mb": 92.2,
-                    "sha256": "1a2f83fe0699e4735c9cb340ccb3654dd62af7f0ee0a90f3e6207e865c76b2b1"
+                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.52/HalconPOS-1.0.52-x86_64.apk",
+                    "file_size_mb": 90.8,
+                    "sha256": "1ba45b2639b228d9955b0764e99da649c8ab1a8396c2c7d371635fc65e0c7f54"
                 }
             }
         },
         "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.51/HalconPOS-Setup-1.0.51.exe",
-            "file_size_mb": 39.9,
-            "sha256": "bcbc6b38d2d0b97225f067ea1f2025c3232ace14173c68c1a35f8b3fc80764e3"
+            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.52/HalconPOS-Setup-1.0.52.exe",
+            "file_size_mb": 39.7,
+            "sha256": "8788ed8897c39aa48e3a68af4a1efccd4c5d6c257e8f4056606894eb88fe4b36"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube: min_version queda donde estaba publicada. Dos razones. Primero, la decision del dueno del 13/10/2026 al elegir la Microsoft Store como canal de Windows: min_version sube SOLO despues de que la Store publico la version, porque subirlo antes bloquea a los clientes de la Store sin que tengan nada que instalar. Segundo, esta version se OFRECE a todos y no se fuerza: no se midio que las versiones anteriores dejen de funcionar contra el servidor actual, asi que no hay motivo medido para bloquearlas."
+    "_por_que_min_version_sube_ahora": "SUBE a 1.0.52 (decision del dueno del 03/11/2026 23:49: que actualicen todos). La 1.0.51 y anteriores traen las pantallas viejas de RR. HH., que dejan de funcionar contra el backend nuevo desplegado el 04/11/2026. Windows todavia no se distribuye por la Microsoft Store (no hay store_url), asi que subirlo no deja a nadie sin algo que instalar: los binarios 1.0.52 ya estaban publicados y descargables antes de este cambio."
 }
