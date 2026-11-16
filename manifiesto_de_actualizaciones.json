@@ -1,7 +1,7 @@
 {
     "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
     "latest_version": "1.0.56",
-    "min_version": "1.0.53",
+    "min_version": "1.0.56",
     "is_mandatory": true,
     "release_date": "2026-11-16",
     "release_notes": {
@@ -43,5 +43,5 @@
             "sha256": "a4b54783a7dccdd80a3f7d9f3947ae9a57a22264a6c317cf5fb5dccdc55caa99"
         }
     },
-    "_por_que_min_version_sube_ahora": "NO sube todavia: queda en 1.0.53 hasta la decision del dueno (16/11/2026). La 1.0.56 trae migraciones ya aplicadas en los 4 comercios y el backend nuevo, que sigue sirviendo a 1.0.53-1.0.55; la guia aconseja dejarla atras unos dias por si el instalador sale mal."
+    "_por_que_min_version_sube_ahora": "Sube a 1.0.56 por decision del dueno (16/11/2026 18:35): todos actualizan. La 1.0.56 se publico y se verifico (5 binarios, descarga y sha256) antes de subirla. No hay version de la Microsoft Store publicada que pueda quedar bloqueada."
 }
