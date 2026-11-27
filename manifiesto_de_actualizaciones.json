@@ -1,47 +1,46 @@
 {
-    "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
-    "latest_version": "1.0.56",
-    "min_version": "1.0.56",
-    "is_mandatory": true,
-    "release_date": "2026-11-16",
-    "release_notes": {
-        "es": "Correcciones de dinero, stock y cobros verificadas módulo por módulo: dos cobros al mismo tiempo ya no fallan, la app avisa cuando una lectura falla o falta un permiso en lugar de mostrar «no hay datos», una venta ya saldada no se vuelve a cobrar, el envío se registra como concepto no gravado y los guardados repetidos se reconocen.",
-        "en": "Money, stock and collection fixes verified module by module: two simultaneous collections no longer fail, the app reports when a read fails or a permission is missing instead of showing \"no data\", a settled sale is not collected again, shipping is recorded as a non-taxed item and repeated saves are recognized.",
-        "_android_no_puede_autoinstalar": "Quien esté en 1.0.20 o ANTERIOR tiene que instalar el APK a mano UNA vez. No es una preferencia: el arreglo está en el mecanismo que instala, así que ninguna versión que lo tenga roto puede traerse a sí misma el arreglo. 1.0.19 NO alcanzaba, aunque su propio manifiesto decía que sí: declaraba el permiso pero nunca lo pedía. De 1.0.21 en adelante se actualiza solo: COMPROBADO en un teléfono real el 27/08/2026, cuando 1.0.21 se trajo e instaló 1.0.22 sin intervención."
-    },
-    "platforms": {
-        "android": {
-            "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.56/HalconPOS-1.0.56-universal.apk",
-            "file_size_mb": 202.2,
-            "sha256": "d5274d39b99c9549ac527a89631054463ca33b0f1c56957c93fd742c7ba736e1",
-            "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
-            "abis": {
-                "arm64-v8a": {
-                    "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.56/HalconPOS-1.0.56-arm64-v8a.apk",
-                    "file_size_mb": 90.5,
-                    "sha256": "ace0a6434fda3447777f6770172f417ba6deedfcf81ba59194b6596e22d9d3da"
-                },
-                "armeabi-v7a": {
-                    "_para": "Equipos de 32 bits, mas viejos.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.56/HalconPOS-1.0.56-armeabi-v7a.apk",
-                    "file_size_mb": 90.5,
-                    "sha256": "44e1dcda7b3ec17bad0cddf1d97449d21a86da813e599fe23b1a5e174568f99c"
-                },
-                "x86_64": {
-                    "_para": "Emuladores de Android en PC.",
-                    "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.56/HalconPOS-1.0.56-x86_64.apk",
-                    "file_size_mb": 91.8,
-                    "sha256": "aec7dfcf7c61df3ff3cc76063733e84f2543d3fe6d5103a3214726b90c1dcf8b"
-                }
-            }
+  "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
+  "latest_version": "1.0.57",
+  "min_version": "1.0.56",
+  "is_mandatory": true,
+  "release_date": "2026-11-26",
+  "release_notes": {
+    "es": "Importes, cantidades y porcentajes se calculan con un solo motor exacto en toda la app y en el servidor: los totales, saldos y stock dan siempre el mismo número por cualquier vía. Nuevo en Compras: pagar una compra impaga desde su detalle (PC y Móvil) y un aviso antes de guardar una compra sin pagar o con pago parcial.",
+    "en": "Amounts, quantities and percentages are calculated with a single exact engine across the app and the server: totals, balances and stock always match on every path. New in Purchases: pay an unpaid purchase from its detail (PC and Mobile) and a warning before saving a purchase without full payment."
+  },
+  "platforms": {
+    "android": {
+      "_por_que_abis": "El APK universal pesa 203.6 MB y de esos ~112 MB son codigo que el telefono de quien lo baja NO puede ejecutar: lleva las tres arquitecturas y cada equipo usa una. Compilado por arquitectura pesa ~90 MB. La aplicacion elige sola cual bajar con Abi.current(); si no reconoce la suya, usa download_url.",
+      "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.57/HalconPOS-1.0.57-universal.apk",
+      "file_size_mb": 202.2,
+      "sha256": "bd428126ef94e6371c1664e4f7119c342fa62b1d4316fac5207b404dae1c0186",
+      "play_store_url": "https://play.google.com/store/apps/details?id=com.halconlabs.halconpos",
+      "abis": {
+        "arm64-v8a": {
+          "_para": "Todos los telefonos Android de los ultimos ~8 anios.",
+          "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.57/HalconPOS-1.0.57-arm64-v8a.apk",
+          "file_size_mb": 90.5,
+          "sha256": "f3932761ad46317abbeba41ac9aafc36ca2d6aadf7446c6a4417a176c02a9ce9"
         },
-        "windows": {
-            "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.56/HalconPOS-Setup-1.0.56.exe",
-            "file_size_mb": 40.2,
-            "sha256": "a4b54783a7dccdd80a3f7d9f3947ae9a57a22264a6c317cf5fb5dccdc55caa99"
+        "armeabi-v7a": {
+          "_para": "Equipos de 32 bits, mas viejos.",
+          "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.57/HalconPOS-1.0.57-armeabi-v7a.apk",
+          "file_size_mb": 90.5,
+          "sha256": "98c78d0c8f8c8bf4fda6107dc9b1437076a25e9b0aa5e53bc456d52477072b3b"
+        },
+        "x86_64": {
+          "_para": "Emuladores de Android en PC.",
+          "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.57/HalconPOS-1.0.57-x86_64.apk",
+          "file_size_mb": 91.8,
+          "sha256": "52ea5c35d6e4f15888cd506c7b433f5ea49248d118b78d2810d331e053eb8059"
         }
+      }
     },
-    "_por_que_min_version_sube_ahora": "Sube a 1.0.56 por decision del dueno (16/11/2026 18:35): todos actualizan. La 1.0.56 se publico y se verifico (5 binarios, descarga y sha256) antes de subirla. No hay version de la Microsoft Store publicada que pueda quedar bloqueada."
+    "windows": {
+      "download_url": "https://github.com/halconlabsCOM/HalconPOS/releases/download/v1.0.57/HalconPOS-Setup-1.0.57.exe",
+      "file_size_mb": 40.2,
+      "sha256": "aea48bb93902638b96dfbdf089b6c31c0ffc3556185503f9a1d5261477becf4c"
+    }
+  },
+  "_por_que_min_version_sube_ahora": "Sube a 1.0.56 por decision del dueno (16/11/2026 18:35): todos actualizan. La 1.0.56 se publico y se verifico (5 binarios, descarga y sha256) antes de subirla. No hay version de la Microsoft Store publicada que pueda quedar bloqueada."
 }
