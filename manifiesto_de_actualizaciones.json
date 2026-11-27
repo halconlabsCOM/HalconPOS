@@ -1,7 +1,7 @@
 {
   "_comentario": "COPIA DE CONSULTA. El que MANDA es el publicado en la raiz de https://github.com/halconlabsCOM/HalconPOS (rama main): ese es el que cada aplicacion instalada lee al arrancar. Esta copia no publica nada. Antes de publicar una version, parti del PUBLICADO (scripts/check_manifest.ps1 avisa si esta copia quedo vieja). Ver release/COMO_PUBLICAR_UNA_VERSION.md.",
   "latest_version": "1.0.57",
-  "min_version": "1.0.56",
+  "min_version": "1.0.57",
   "is_mandatory": true,
   "release_date": "2026-11-26",
   "release_notes": {
@@ -42,5 +42,5 @@
       "sha256": "aea48bb93902638b96dfbdf089b6c31c0ffc3556185503f9a1d5261477becf4c"
     }
   },
-  "_por_que_min_version_sube_ahora": "Sube a 1.0.56 por decision del dueno (16/11/2026 18:35): todos actualizan. La 1.0.56 se publico y se verifico (5 binarios, descarga y sha256) antes de subirla. No hay version de la Microsoft Store publicada que pueda quedar bloqueada."
+  "_por_que_min_version_sube_ahora": "26/11/2026: lo decidió el dueño («Sí, subir a 1.0.57») después de publicar los binarios y verificar las descargas. La 1.0.57 lleva el motor único de números (importes, cantidades y porcentajes exactos en la app y en el servidor, que ya corre la 1.0.57 con la base migrada) y el pago de compras impagas: todos actualizan para que app y servidor calculen igual."
 }
